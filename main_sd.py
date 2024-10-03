@@ -84,6 +84,20 @@ class Ui_MainWindow(object):
         self.tabs.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+        self.pushButton_3.setStyleSheet("QPushButton {"
+                                        "height: 100px;"
+                                        "border: 2px solid black;"
+                                        "border-radius: 10px;"
+                                        "background-color: white;"
+                                        "color: black;"
+                                        "}")
+
+        # Animacion
+        self.animation = QtCore.QPropertyAnimation(self.pushButton_3, b"color")
+        self.animation.setDuration(300)
+
+        self.pushButton_3.setMouseTracking(True)
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "SellingSoftwareForMollysCookies"))

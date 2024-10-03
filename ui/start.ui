@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>855</width>
     <height>600</height>
    </rect>
   </property>
@@ -14,20 +14,37 @@
    <string>SellingSoftwareForMollysCookies</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	background-color: black;
+}</string>
+   </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabs">
+      <property name="cursor">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
       <property name="styleSheet">
-       <string notr="true">QTabBar::tab {
+       <string notr="true">
+QTabBar::tab {
         border: 1px solid black;
         padding: 10px;
+		background-color: white;
+		border-radius: 5px;
+		font-family: Arial;
+		font-size: 14px;
 }
+
 QTabBar::tab:selected {
-        background: rgb(170, 170, 170);
+        background: orange;
         font-weight: bold;
+		color: white;
 }
+
 QTabBar::tab:hover {
-        background: rgb(200, 200, 200);
+        background:  rgb(242, 75, 24);
+		cursor: pointer;
 }</string>
       </property>
       <property name="currentIndex">
@@ -42,11 +59,14 @@ QTabBar::tab:hover {
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>781</width>
+          <width>811</width>
           <height>501</height>
          </rect>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout">
+         <property name="spacing">
+          <number>4</number>
+         </property>
          <property name="sizeConstraint">
           <enum>QLayout::SetDefaultConstraint</enum>
          </property>
@@ -57,23 +77,301 @@ QTabBar::tab:hover {
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>391</width>
-              <height>501</height>
+              <width>411</width>
+              <height>391</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout">
              <item>
-              <widget class="QTreeView" name="treeView"/>
+              <widget class="QTreeView" name="treeView">
+               <property name="styleSheet">
+                <string notr="true">QTreeView{
+	background-color: white;
+
+}</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </widget>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushButton_3">
-           <property name="text">
-            <string>PushButton</string>
-           </property>
+           <widget class="QPushButton" name="pushButton_3">
+            <property name="geometry">
+             <rect>
+              <x>420</x>
+              <y>330</y>
+              <width>371</width>
+              <height>54</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>12</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>OpenHandCursor</cursorShape>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::RightToLeft</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+	font-family: Arial;
+	font-size: 12;
+	font-weight: bold;
+	background-color: orange;
+	color: white;
+	width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 10px;
+	transition: background-color 0.5s, transform 0.5s;
+}
+
+QPushButton:hover {
+	background-color: white;
+	color: black;
+    cursor: pointer;
+}
+
+
+
+</string>
+            </property>
+            <property name="text">
+             <string>PushButton</string>
+            </property>
+            <property name="autoRepeatDelay">
+             <number>300</number>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label">
+            <property name="geometry">
+             <rect>
+              <x>430</x>
+              <y>50</y>
+              <width>91</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{	
+	color: white;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+}</string>
+            </property>
+            <property name="text">
+             <string>Producto</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_2">
+            <property name="geometry">
+             <rect>
+              <x>560</x>
+              <y>50</y>
+              <width>91</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{	
+	color: white;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+}</string>
+            </property>
+            <property name="text">
+             <string>Cantidad</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_3">
+            <property name="geometry">
+             <rect>
+              <x>690</x>
+              <y>50</y>
+              <width>91</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{	
+	color: white;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+}</string>
+            </property>
+            <property name="text">
+             <string>Total</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_4">
+            <property name="geometry">
+             <rect>
+              <x>430</x>
+              <y>100</y>
+              <width>341</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{	
+	color: white;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+	background-color: orange;
+	border-radius: 10px;
+}</string>
+            </property>
+            <property name="text">
+             <string>Item1</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_5">
+            <property name="geometry">
+             <rect>
+              <x>430</x>
+              <y>160</y>
+              <width>341</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{	
+	color: white;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+	background-color: orange;
+	border-radius: 10px;
+}</string>
+            </property>
+            <property name="text">
+             <string>Item2</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_6">
+            <property name="geometry">
+             <rect>
+              <x>430</x>
+              <y>220</y>
+              <width>341</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{	
+	color: white;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+	background-color: orange;
+	border-radius: 10px;
+}</string>
+            </property>
+            <property name="text">
+             <string>Item3</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_7">
+            <property name="geometry">
+             <rect>
+              <x>420</x>
+              <y>410</y>
+              <width>371</width>
+              <height>61</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{	
+	color: white;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+	background-color: orange;
+	border-radius: 10px;
+}</string>
+            </property>
+            <property name="text">
+             <string>Cosas Generales</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_8">
+            <property name="geometry">
+             <rect>
+              <x>140</x>
+              <y>410</y>
+              <width>261</width>
+              <height>61</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{	
+	color: white;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+	background-color: orange;
+	border-radius: 10px;
+}</string>
+            </property>
+            <property name="text">
+             <string>Caracteristicas</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_9">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>410</y>
+              <width>121</width>
+              <height>61</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{	
+	color: white;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+	background-color: orange;
+	border-radius: 10px;
+}</string>
+            </property>
+            <property name="text">
+             <string>Imagen del producto</string>
+            </property>
+            <property name="textFormat">
+             <enum>Qt::AutoText</enum>
+            </property>
+            <property name="scaledContents">
+             <bool>false</bool>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
           </widget>
          </item>
         </layout>
@@ -98,7 +396,7 @@ QTabBar::tab:hover {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>855</width>
      <height>22</height>
     </rect>
    </property>
