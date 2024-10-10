@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(855, 600)
+        MainWindow.resize(826, 590)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setStyleSheet("QWidget{\n"
 "    background-color: black;\n"
@@ -43,6 +43,139 @@ class Ui_MainWindow(object):
 "        cursor: pointer;\n"
 "}")
         self.tabs.setObjectName("tabs")
+        self.crearordenTab = QtWidgets.QWidget()
+        self.crearordenTab.setObjectName("crearordenTab")
+        self.createorder = QtWidgets.QPushButton(parent=self.crearordenTab)
+        self.createorder.setGeometry(QtCore.QRect(420, 320, 371, 61))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(12)
+        font.setBold(True)
+        self.createorder.setFont(font)
+        self.createorder.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.OpenHandCursor))
+        self.createorder.setLayoutDirection(QtCore.Qt.LayoutDirection.RightToLeft)
+        self.createorder.setStyleSheet("QPushButton {\n"
+"    font-family: Arial;\n"
+"    font-size: 12;\n"
+"    font-weight: bold;\n"
+"    background-color: orange;\n"
+"    color: white;\n"
+"    width: 50px;\n"
+"    height: 50px;\n"
+"    border: 2px solid black;\n"
+"    border-radius: 10px;\n"
+"    transition: background-color 0.5s, transform 0.5s;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"    cursor: pointer;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.createorder.setAutoRepeatDelay(300)
+        self.createorder.setObjectName("createorder")
+        self.totalprice = QtWidgets.QLabel(parent=self.crearordenTab)
+        self.totalprice.setGeometry(QtCore.QRect(570, 390, 211, 81))
+        self.totalprice.setStyleSheet("QLabel{    \n"
+"    color: white;\n"
+"    font-family: Arial;\n"
+"    font-size: 18px;\n"
+"    font-weight: bold;\n"
+"    background-color: orange;\n"
+"    border-radius: 10px;\n"
+"}")
+        self.totalprice.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.totalprice.setObjectName("totalprice")
+        self.searchbar = QtWidgets.QTextEdit(parent=self.crearordenTab)
+        self.searchbar.setGeometry(QtCore.QRect(0, 0, 401, 41))
+        self.searchbar.setStyleSheet("QTextEdit{\n"
+"    background-color: white;\n"
+"    font-family: Arial;\n"
+"    font-size: 18px;\n"
+"}")
+        self.searchbar.setObjectName("searchbar")
+        self.itemimg = QtWidgets.QLabel(parent=self.crearordenTab)
+        self.itemimg.setGeometry(QtCore.QRect(20, 390, 131, 81))
+        self.itemimg.setStyleSheet("QLabel{    \n"
+"    color: white;\n"
+"    font-family: Arial;\n"
+"    font-size: 18px;\n"
+"    font-weight: bold;\n"
+"    background-color: orange;\n"
+"    border-radius: 10px;\n"
+"}")
+        self.itemimg.setTextFormat(QtCore.Qt.TextFormat.AutoText)
+        self.itemimg.setScaledContents(False)
+        self.itemimg.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.itemimg.setObjectName("itemimg")
+        self.product_label = QtWidgets.QLabel(parent=self.crearordenTab)
+        self.product_label.setGeometry(QtCore.QRect(430, 40, 91, 21))
+        self.product_label.setStyleSheet("QLabel{    \n"
+"    color: white;\n"
+"    font-family: Arial;\n"
+"    font-size: 18px;\n"
+"    font-weight: bold;\n"
+"}")
+        self.product_label.setObjectName("product_label")
+        self.quantity_label = QtWidgets.QLabel(parent=self.crearordenTab)
+        self.quantity_label.setGeometry(QtCore.QRect(570, 40, 91, 21))
+        self.quantity_label.setStyleSheet("QLabel{    \n"
+"    color: white;\n"
+"    font-family: Arial;\n"
+"    font-size: 18px;\n"
+"    font-weight: bold;\n"
+"}")
+        self.quantity_label.setObjectName("quantity_label")
+        self.total_label = QtWidgets.QLabel(parent=self.crearordenTab)
+        self.total_label.setGeometry(QtCore.QRect(730, 40, 51, 21))
+        self.total_label.setStyleSheet("QLabel{    \n"
+"    color: white;\n"
+"    font-family: Arial;\n"
+"    font-size: 18px;\n"
+"    font-weight: bold;\n"
+"}")
+        self.total_label.setObjectName("total_label")
+        self.characteristics = QtWidgets.QLabel(parent=self.crearordenTab)
+        self.characteristics.setGeometry(QtCore.QRect(160, 390, 391, 81))
+        self.characteristics.setStyleSheet("QLabel{    \n"
+"    color: white;\n"
+"    font-family: Arial;\n"
+"    font-size: 18px;\n"
+"    font-weight: bold;\n"
+"    background-color: orange;\n"
+"    border-radius: 10px;\n"
+"}")
+        self.characteristics.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.characteristics.setObjectName("characteristics")
+        self.horizontalLayoutWidget_3 = QtWidgets.QWidget(parent=self.crearordenTab)
+        self.horizontalLayoutWidget_3.setGeometry(QtCore.QRect(0, 60, 401, 311))
+        self.horizontalLayoutWidget_3.setObjectName("horizontalLayoutWidget_3")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_3)
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.items = QtWidgets.QListWidget(parent=self.horizontalLayoutWidget_3)
+        self.items.setStyleSheet("QListView{\n"
+"    background-color: white;\n"
+"}")
+        self.items.setObjectName("items")
+        self.horizontalLayout_3.addWidget(self.items)
+        self.horizontalLayoutWidget_4 = QtWidgets.QWidget(parent=self.crearordenTab)
+        self.horizontalLayoutWidget_4.setGeometry(QtCore.QRect(420, 70, 371, 241))
+        self.horizontalLayoutWidget_4.setObjectName("horizontalLayoutWidget_4")
+        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_4)
+        self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
+        self.selecteditems = QtWidgets.QListWidget(parent=self.horizontalLayoutWidget_4)
+        self.selecteditems.setStyleSheet("QListView{\n"
+"    background-color: white;\n"
+"}")
+        self.selecteditems.setObjectName("selecteditems")
+        self.horizontalLayout_5.addWidget(self.selecteditems)
+        self.tabs.addTab(self.crearordenTab, "")
         self.ordenesTab = QtWidgets.QWidget()
         self.ordenesTab.setObjectName("ordenesTab")
         self.horizontalLayoutWidget = QtWidgets.QWidget(parent=self.ordenesTab)
@@ -56,7 +189,7 @@ class Ui_MainWindow(object):
         self.widget = QtWidgets.QWidget(parent=self.horizontalLayoutWidget)
         self.widget.setObjectName("widget")
         self.verticalLayoutWidget = QtWidgets.QWidget(parent=self.widget)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 411, 391))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 60, 401, 331))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -64,12 +197,14 @@ class Ui_MainWindow(object):
         self.treeView = QtWidgets.QTreeView(parent=self.verticalLayoutWidget)
         self.treeView.setStyleSheet("QTreeView{\n"
 "    background-color: white;\n"
+"}\n"
 "\n"
-"}")
+"")
         self.treeView.setObjectName("treeView")
+        self.treeView.header().setMinimumSectionSize(39)
         self.verticalLayout.addWidget(self.treeView)
         self.pushButton_3 = QtWidgets.QPushButton(parent=self.widget)
-        self.pushButton_3.setGeometry(QtCore.QRect(420, 330, 371, 54))
+        self.pushButton_3.setGeometry(QtCore.QRect(10, 410, 291, 61))
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(12)
@@ -111,7 +246,7 @@ class Ui_MainWindow(object):
 "}")
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(parent=self.widget)
-        self.label_2.setGeometry(QtCore.QRect(560, 50, 91, 21))
+        self.label_2.setGeometry(QtCore.QRect(570, 50, 91, 21))
         self.label_2.setStyleSheet("QLabel{    \n"
 "    color: white;\n"
 "    font-family: Arial;\n"
@@ -120,7 +255,7 @@ class Ui_MainWindow(object):
 "}")
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(parent=self.widget)
-        self.label_3.setGeometry(QtCore.QRect(690, 50, 91, 21))
+        self.label_3.setGeometry(QtCore.QRect(730, 50, 51, 21))
         self.label_3.setStyleSheet("QLabel{    \n"
 "    color: white;\n"
 "    font-family: Arial;\n"
@@ -128,44 +263,8 @@ class Ui_MainWindow(object):
 "    font-weight: bold;\n"
 "}")
         self.label_3.setObjectName("label_3")
-        self.label_4 = QtWidgets.QLabel(parent=self.widget)
-        self.label_4.setGeometry(QtCore.QRect(430, 100, 341, 41))
-        self.label_4.setStyleSheet("QLabel{    \n"
-"    color: white;\n"
-"    font-family: Arial;\n"
-"    font-size: 18px;\n"
-"    font-weight: bold;\n"
-"    background-color: orange;\n"
-"    border-radius: 10px;\n"
-"}")
-        self.label_4.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_4.setObjectName("label_4")
-        self.label_5 = QtWidgets.QLabel(parent=self.widget)
-        self.label_5.setGeometry(QtCore.QRect(430, 160, 341, 41))
-        self.label_5.setStyleSheet("QLabel{    \n"
-"    color: white;\n"
-"    font-family: Arial;\n"
-"    font-size: 18px;\n"
-"    font-weight: bold;\n"
-"    background-color: orange;\n"
-"    border-radius: 10px;\n"
-"}")
-        self.label_5.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_5.setObjectName("label_5")
-        self.label_6 = QtWidgets.QLabel(parent=self.widget)
-        self.label_6.setGeometry(QtCore.QRect(430, 220, 341, 41))
-        self.label_6.setStyleSheet("QLabel{    \n"
-"    color: white;\n"
-"    font-family: Arial;\n"
-"    font-size: 18px;\n"
-"    font-weight: bold;\n"
-"    background-color: orange;\n"
-"    border-radius: 10px;\n"
-"}")
-        self.label_6.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_6.setObjectName("label_6")
         self.label_7 = QtWidgets.QLabel(parent=self.widget)
-        self.label_7.setGeometry(QtCore.QRect(420, 410, 371, 61))
+        self.label_7.setGeometry(QtCore.QRect(310, 410, 211, 61))
         self.label_7.setStyleSheet("QLabel{    \n"
 "    color: white;\n"
 "    font-family: Arial;\n"
@@ -177,7 +276,7 @@ class Ui_MainWindow(object):
         self.label_7.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_7.setObjectName("label_7")
         self.label_8 = QtWidgets.QLabel(parent=self.widget)
-        self.label_8.setGeometry(QtCore.QRect(140, 410, 261, 61))
+        self.label_8.setGeometry(QtCore.QRect(540, 340, 241, 51))
         self.label_8.setStyleSheet("QLabel{    \n"
 "    color: white;\n"
 "    font-family: Arial;\n"
@@ -189,7 +288,7 @@ class Ui_MainWindow(object):
         self.label_8.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_8.setObjectName("label_8")
         self.label_9 = QtWidgets.QLabel(parent=self.widget)
-        self.label_9.setGeometry(QtCore.QRect(10, 410, 121, 61))
+        self.label_9.setGeometry(QtCore.QRect(430, 340, 101, 51))
         self.label_9.setStyleSheet("QLabel{    \n"
 "    color: white;\n"
 "    font-family: Arial;\n"
@@ -202,6 +301,53 @@ class Ui_MainWindow(object):
         self.label_9.setScaledContents(False)
         self.label_9.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_9.setObjectName("label_9")
+        self.textEdit = QtWidgets.QTextEdit(parent=self.widget)
+        self.textEdit.setGeometry(QtCore.QRect(0, 0, 401, 41))
+        self.textEdit.setStyleSheet("QTextEdit{\n"
+"    background-color: white;\n"
+"    font-family: Arial;\n"
+"    font-size: 18px;\n"
+"}")
+        self.textEdit.setObjectName("textEdit")
+        self.listView = QtWidgets.QListView(parent=self.widget)
+        self.listView.setGeometry(QtCore.QRect(430, 80, 351, 241))
+        self.listView.setStyleSheet("QListView{\n"
+"    background-color: white;\n"
+"}")
+        self.listView.setObjectName("listView")
+        self.pushButton_6 = QtWidgets.QPushButton(parent=self.widget)
+        self.pushButton_6.setGeometry(QtCore.QRect(530, 410, 251, 61))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(12)
+        font.setBold(True)
+        self.pushButton_6.setFont(font)
+        self.pushButton_6.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.OpenHandCursor))
+        self.pushButton_6.setLayoutDirection(QtCore.Qt.LayoutDirection.RightToLeft)
+        self.pushButton_6.setStyleSheet("QPushButton {\n"
+"    font-family: Arial;\n"
+"    font-size: 12;\n"
+"    font-weight: bold;\n"
+"    background-color: orange;\n"
+"    color: white;\n"
+"    width: 50px;\n"
+"    height: 50px;\n"
+"    border: 2px solid black;\n"
+"    border-radius: 10px;\n"
+"    transition: background-color 0.5s, transform 0.5s;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"    cursor: pointer;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.pushButton_6.setAutoRepeatDelay(300)
+        self.pushButton_6.setObjectName("pushButton_6")
         self.horizontalLayout.addWidget(self.widget)
         self.tabs.addTab(self.ordenesTab, "")
         self.inventarioTab = QtWidgets.QWidget()
@@ -210,10 +356,10 @@ class Ui_MainWindow(object):
         self.reportesTab = QtWidgets.QWidget()
         self.reportesTab.setObjectName("reportesTab")
         self.tabs.addTab(self.reportesTab, "")
-        self.gridLayout.addWidget(self.tabs, 0, 0, 1, 1)
+        self.gridLayout.addWidget(self.tabs, 0, 1, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 855, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 826, 22))
         self.menubar.setObjectName("menubar")
         self.menuFile = QtWidgets.QMenu(parent=self.menubar)
         self.menuFile.setObjectName("menuFile")
@@ -236,16 +382,22 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "SellingSoftwareForMollysCookies"))
-        self.pushButton_3.setText(_translate("MainWindow", "PushButton"))
+        self.createorder.setText(_translate("MainWindow", "Crear orden"))
+        self.totalprice.setText(_translate("MainWindow", "Precio total"))
+        self.itemimg.setText(_translate("MainWindow", "Imagen del producto"))
+        self.product_label.setText(_translate("MainWindow", "Producto"))
+        self.quantity_label.setText(_translate("MainWindow", "Cantidad"))
+        self.total_label.setText(_translate("MainWindow", "Total"))
+        self.characteristics.setText(_translate("MainWindow", "Caracteristicas"))
+        self.tabs.setTabText(self.tabs.indexOf(self.crearordenTab), _translate("MainWindow", "Crear"))
+        self.pushButton_3.setText(_translate("MainWindow", "Eliminar orden"))
         self.label.setText(_translate("MainWindow", "Producto"))
         self.label_2.setText(_translate("MainWindow", "Cantidad"))
         self.label_3.setText(_translate("MainWindow", "Total"))
-        self.label_4.setText(_translate("MainWindow", "Item1"))
-        self.label_5.setText(_translate("MainWindow", "Item2"))
-        self.label_6.setText(_translate("MainWindow", "Item3"))
-        self.label_7.setText(_translate("MainWindow", "Cosas Generales"))
+        self.label_7.setText(_translate("MainWindow", "Total a pagar"))
         self.label_8.setText(_translate("MainWindow", "Caracteristicas"))
         self.label_9.setText(_translate("MainWindow", "Imagen del producto"))
+        self.pushButton_6.setText(_translate("MainWindow", "Eliminar item"))
         self.tabs.setTabText(self.tabs.indexOf(self.ordenesTab), _translate("MainWindow", "Ordenes"))
         self.tabs.setTabText(self.tabs.indexOf(self.inventarioTab), _translate("MainWindow", "Inventario"))
         self.tabs.setTabText(self.tabs.indexOf(self.reportesTab), _translate("MainWindow", "Reportes"))

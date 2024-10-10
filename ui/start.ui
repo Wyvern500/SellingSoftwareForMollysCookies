@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>855</width>
-    <height>600</height>
+    <width>826</width>
+    <height>590</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
 }</string>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
+    <item row="0" column="1">
      <widget class="QTabWidget" name="tabs">
       <property name="cursor">
        <cursorShape>ArrowCursor</cursorShape>
@@ -50,6 +50,270 @@ QTabBar::tab:hover {
       <property name="currentIndex">
        <number>0</number>
       </property>
+      <widget class="QWidget" name="crearordenTab">
+       <attribute name="title">
+        <string>Crear</string>
+       </attribute>
+       <widget class="QPushButton" name="createorder">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>320</y>
+          <width>371</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>OpenHandCursor</cursorShape>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	font-family: Arial;
+	font-size: 12;
+	font-weight: bold;
+	background-color: orange;
+	color: white;
+	width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 10px;
+	transition: background-color 0.5s, transform 0.5s;
+}
+
+QPushButton:hover {
+	background-color: white;
+	color: black;
+    cursor: pointer;
+}
+
+
+
+</string>
+        </property>
+        <property name="text">
+         <string>Crear orden</string>
+        </property>
+        <property name="autoRepeatDelay">
+         <number>300</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="totalprice">
+        <property name="geometry">
+         <rect>
+          <x>570</x>
+          <y>390</y>
+          <width>211</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{	
+	color: white;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+	background-color: orange;
+	border-radius: 10px;
+}</string>
+        </property>
+        <property name="text">
+         <string>Precio total</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="searchbar">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>401</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QTextEdit{
+	background-color: white;
+	font-family: Arial;
+	font-size: 18px;
+}</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="itemimg">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>390</y>
+          <width>131</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{	
+	color: white;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+	background-color: orange;
+	border-radius: 10px;
+}</string>
+        </property>
+        <property name="text">
+         <string>Imagen del producto</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::AutoText</enum>
+        </property>
+        <property name="scaledContents">
+         <bool>false</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="product_label">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>40</y>
+          <width>91</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{	
+	color: white;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+}</string>
+        </property>
+        <property name="text">
+         <string>Producto</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="quantity_label">
+        <property name="geometry">
+         <rect>
+          <x>570</x>
+          <y>40</y>
+          <width>91</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{	
+	color: white;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+}</string>
+        </property>
+        <property name="text">
+         <string>Cantidad</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="total_label">
+        <property name="geometry">
+         <rect>
+          <x>730</x>
+          <y>40</y>
+          <width>51</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{	
+	color: white;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+}</string>
+        </property>
+        <property name="text">
+         <string>Total</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="characteristics">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>390</y>
+          <width>391</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{	
+	color: white;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+	background-color: orange;
+	border-radius: 10px;
+}</string>
+        </property>
+        <property name="text">
+         <string>Caracteristicas</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QWidget" name="horizontalLayoutWidget_3">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>60</y>
+          <width>401</width>
+          <height>311</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QListWidget" name="items">
+           <property name="styleSheet">
+            <string notr="true">QListView{
+	background-color: white;
+}</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="horizontalLayoutWidget_4">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>70</y>
+          <width>371</width>
+          <height>241</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QListWidget" name="selecteditems">
+           <property name="styleSheet">
+            <string notr="true">QListView{
+	background-color: white;
+}</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
       <widget class="QWidget" name="ordenesTab">
        <attribute name="title">
         <string>Ordenes</string>
@@ -76,9 +340,9 @@ QTabBar::tab:hover {
             <property name="geometry">
              <rect>
               <x>0</x>
-              <y>0</y>
-              <width>411</width>
-              <height>391</height>
+              <y>60</y>
+              <width>401</width>
+              <height>331</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout">
@@ -87,9 +351,13 @@ QTabBar::tab:hover {
                <property name="styleSheet">
                 <string notr="true">QTreeView{
 	background-color: white;
+}
 
-}</string>
+</string>
                </property>
+               <attribute name="headerMinimumSectionSize">
+                <number>39</number>
+               </attribute>
               </widget>
              </item>
             </layout>
@@ -97,10 +365,10 @@ QTabBar::tab:hover {
            <widget class="QPushButton" name="pushButton_3">
             <property name="geometry">
              <rect>
-              <x>420</x>
-              <y>330</y>
-              <width>371</width>
-              <height>54</height>
+              <x>10</x>
+              <y>410</y>
+              <width>291</width>
+              <height>61</height>
              </rect>
             </property>
             <property name="font">
@@ -141,7 +409,7 @@ QPushButton:hover {
 </string>
             </property>
             <property name="text">
-             <string>PushButton</string>
+             <string>Eliminar orden</string>
             </property>
             <property name="autoRepeatDelay">
              <number>300</number>
@@ -171,7 +439,7 @@ QPushButton:hover {
            <widget class="QLabel" name="label_2">
             <property name="geometry">
              <rect>
-              <x>560</x>
+              <x>570</x>
               <y>50</y>
               <width>91</width>
               <height>21</height>
@@ -192,9 +460,9 @@ QPushButton:hover {
            <widget class="QLabel" name="label_3">
             <property name="geometry">
              <rect>
-              <x>690</x>
+              <x>730</x>
               <y>50</y>
-              <width>91</width>
+              <width>51</width>
               <height>21</height>
              </rect>
             </property>
@@ -210,90 +478,12 @@ QPushButton:hover {
              <string>Total</string>
             </property>
            </widget>
-           <widget class="QLabel" name="label_4">
-            <property name="geometry">
-             <rect>
-              <x>430</x>
-              <y>100</y>
-              <width>341</width>
-              <height>41</height>
-             </rect>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QLabel{	
-	color: white;
-	font-family: Arial;
-	font-size: 18px;
-	font-weight: bold;
-	background-color: orange;
-	border-radius: 10px;
-}</string>
-            </property>
-            <property name="text">
-             <string>Item1</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-           <widget class="QLabel" name="label_5">
-            <property name="geometry">
-             <rect>
-              <x>430</x>
-              <y>160</y>
-              <width>341</width>
-              <height>41</height>
-             </rect>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QLabel{	
-	color: white;
-	font-family: Arial;
-	font-size: 18px;
-	font-weight: bold;
-	background-color: orange;
-	border-radius: 10px;
-}</string>
-            </property>
-            <property name="text">
-             <string>Item2</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-           <widget class="QLabel" name="label_6">
-            <property name="geometry">
-             <rect>
-              <x>430</x>
-              <y>220</y>
-              <width>341</width>
-              <height>41</height>
-             </rect>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QLabel{	
-	color: white;
-	font-family: Arial;
-	font-size: 18px;
-	font-weight: bold;
-	background-color: orange;
-	border-radius: 10px;
-}</string>
-            </property>
-            <property name="text">
-             <string>Item3</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
            <widget class="QLabel" name="label_7">
             <property name="geometry">
              <rect>
-              <x>420</x>
+              <x>310</x>
               <y>410</y>
-              <width>371</width>
+              <width>211</width>
               <height>61</height>
              </rect>
             </property>
@@ -308,7 +498,7 @@ QPushButton:hover {
 }</string>
             </property>
             <property name="text">
-             <string>Cosas Generales</string>
+             <string>Total a pagar</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -317,10 +507,10 @@ QPushButton:hover {
            <widget class="QLabel" name="label_8">
             <property name="geometry">
              <rect>
-              <x>140</x>
-              <y>410</y>
-              <width>261</width>
-              <height>61</height>
+              <x>540</x>
+              <y>340</y>
+              <width>241</width>
+              <height>51</height>
              </rect>
             </property>
             <property name="styleSheet">
@@ -343,10 +533,10 @@ QPushButton:hover {
            <widget class="QLabel" name="label_9">
             <property name="geometry">
              <rect>
-              <x>10</x>
-              <y>410</y>
-              <width>121</width>
-              <height>61</height>
+              <x>430</x>
+              <y>340</y>
+              <width>101</width>
+              <height>51</height>
              </rect>
             </property>
             <property name="styleSheet">
@@ -370,6 +560,91 @@ QPushButton:hover {
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+           <widget class="QTextEdit" name="textEdit">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>401</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QTextEdit{
+	background-color: white;
+	font-family: Arial;
+	font-size: 18px;
+}</string>
+            </property>
+           </widget>
+           <widget class="QListView" name="listView">
+            <property name="geometry">
+             <rect>
+              <x>430</x>
+              <y>80</y>
+              <width>351</width>
+              <height>241</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QListView{
+	background-color: white;
+}</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pushButton_6">
+            <property name="geometry">
+             <rect>
+              <x>530</x>
+              <y>410</y>
+              <width>251</width>
+              <height>61</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>12</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>OpenHandCursor</cursorShape>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::RightToLeft</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+	font-family: Arial;
+	font-size: 12;
+	font-weight: bold;
+	background-color: orange;
+	color: white;
+	width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 10px;
+	transition: background-color 0.5s, transform 0.5s;
+}
+
+QPushButton:hover {
+	background-color: white;
+	color: black;
+    cursor: pointer;
+}
+
+
+
+</string>
+            </property>
+            <property name="text">
+             <string>Eliminar item</string>
+            </property>
+            <property name="autoRepeatDelay">
+             <number>300</number>
             </property>
            </widget>
           </widget>
@@ -396,7 +671,7 @@ QPushButton:hover {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>855</width>
+     <width>826</width>
      <height>22</height>
     </rect>
    </property>
