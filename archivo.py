@@ -131,7 +131,7 @@ class Ui_MainWindow(object):
 "}")
         self.quantity_label.setObjectName("quantity_label")
         self.total_label = QtWidgets.QLabel(parent=self.crearordenTab)
-        self.total_label.setGeometry(QtCore.QRect(730, 40, 51, 21))
+        self.total_label.setGeometry(QtCore.QRect(700, 40, 81, 21))
         self.total_label.setStyleSheet("QLabel{    \n"
 "    color: white;\n"
 "    font-family: Arial;\n"
@@ -352,6 +352,136 @@ class Ui_MainWindow(object):
         self.tabs.addTab(self.ordenesTab, "")
         self.inventarioTab = QtWidgets.QWidget()
         self.inventarioTab.setObjectName("inventarioTab")
+        self.treeView_2 = QtWidgets.QTreeView(parent=self.inventarioTab)
+        self.treeView_2.setGeometry(QtCore.QRect(10, 60, 399, 401))
+        self.treeView_2.setStyleSheet("QTreeView{\n"
+"    background-color: white;\n"
+"}\n"
+"\n"
+"")
+        self.treeView_2.setObjectName("treeView_2")
+        self.treeView_2.header().setMinimumSectionSize(39)
+        self.label_4 = QtWidgets.QLabel(parent=self.inventarioTab)
+        self.label_4.setGeometry(QtCore.QRect(10, 20, 131, 21))
+        self.label_4.setStyleSheet("QLabel{    \n"
+"    color: white;\n"
+"    font-family: Arial;\n"
+"    font-size: 18px;\n"
+"    font-weight: bold;\n"
+"}")
+        self.label_4.setObjectName("label_4")
+        self.label_10 = QtWidgets.QLabel(parent=self.inventarioTab)
+        self.label_10.setGeometry(QtCore.QRect(440, 50, 331, 51))
+        self.label_10.setStyleSheet("QLabel{    \n"
+"    color: white;\n"
+"    font-family: Arial;\n"
+"    font-size: 18px;\n"
+"    font-weight: bold;\n"
+"    background-color: orange;\n"
+"    border-radius: 10px;\n"
+"}")
+        self.label_10.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_10.setObjectName("label_10")
+        self.guardarcambios = QtWidgets.QPushButton(parent=self.inventarioTab)
+        self.guardarcambios.setGeometry(QtCore.QRect(430, 400, 351, 61))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(12)
+        font.setBold(True)
+        self.guardarcambios.setFont(font)
+        self.guardarcambios.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.OpenHandCursor))
+        self.guardarcambios.setLayoutDirection(QtCore.Qt.LayoutDirection.RightToLeft)
+        self.guardarcambios.setStyleSheet("QPushButton {\n"
+"    font-family: Arial;\n"
+"    font-size: 12;\n"
+"    font-weight: bold;\n"
+"    background-color: orange;\n"
+"    color: white;\n"
+"    width: 50px;\n"
+"    height: 50px;\n"
+"    border: 2px solid black;\n"
+"    border-radius: 10px;\n"
+"    transition: background-color 0.5s, transform 0.5s;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"    cursor: pointer;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.guardarcambios.setAutoRepeatDelay(300)
+        self.guardarcambios.setObjectName("guardarcambios")
+        self.listView_2 = QtWidgets.QListView(parent=self.inventarioTab)
+        self.listView_2.setGeometry(QtCore.QRect(440, 120, 331, 261))
+        self.listView_2.setStyleSheet("QListView{\n"
+"    background-color: white;\n"
+"    \n"
+"}")
+        self.listView_2.setObjectName("listView_2")
+        self.label_5 = QtWidgets.QLabel(parent=self.inventarioTab)
+        self.label_5.setGeometry(QtCore.QRect(460, 140, 111, 21))
+        self.label_5.setStyleSheet("QLabel{\n"
+"    background-color: white;\n"
+"}")
+        self.label_5.setObjectName("label_5")
+        self.label_6 = QtWidgets.QLabel(parent=self.inventarioTab)
+        self.label_6.setGeometry(QtCore.QRect(460, 180, 111, 21))
+        self.label_6.setStyleSheet("QLabel{\n"
+"    background-color: white;\n"
+"}")
+        self.label_6.setObjectName("label_6")
+        self.label_11 = QtWidgets.QLabel(parent=self.inventarioTab)
+        self.label_11.setGeometry(QtCore.QRect(460, 220, 111, 21))
+        self.label_11.setStyleSheet("QLabel{\n"
+"    background-color: white;\n"
+"}")
+        self.label_11.setObjectName("label_11")
+        self.label_12 = QtWidgets.QLabel(parent=self.inventarioTab)
+        self.label_12.setGeometry(QtCore.QRect(460, 260, 111, 21))
+        self.label_12.setStyleSheet("QLabel{\n"
+"    background-color: white;\n"
+"}")
+        self.label_12.setObjectName("label_12")
+        self.lineEdit = QtWidgets.QLineEdit(parent=self.inventarioTab)
+        self.lineEdit.setGeometry(QtCore.QRect(620, 140, 113, 22))
+        self.lineEdit.setStyleSheet("QLineEdit{\n"
+"    background-color: white;\n"
+"}")
+        self.lineEdit.setObjectName("lineEdit")
+        self.spinBox = QtWidgets.QSpinBox(parent=self.inventarioTab)
+        self.spinBox.setGeometry(QtCore.QRect(620, 180, 42, 22))
+        self.spinBox.setStyleSheet("QSpinBox{\n"
+"    background-color: white;\n"
+"}")
+        self.spinBox.setObjectName("spinBox")
+        self.dateEdit = QtWidgets.QDateEdit(parent=self.inventarioTab)
+        self.dateEdit.setGeometry(QtCore.QRect(620, 220, 110, 22))
+        self.dateEdit.setStyleSheet("QDateEdit{\n"
+"    background-color: white;\n"
+"}")
+        self.dateEdit.setObjectName("dateEdit")
+        self.textEdit_2 = QtWidgets.QTextEdit(parent=self.inventarioTab)
+        self.textEdit_2.setGeometry(QtCore.QRect(620, 300, 104, 71))
+        self.textEdit_2.setStyleSheet("QTextEdit{\n"
+"    background-color: white;\n"
+"}")
+        self.textEdit_2.setObjectName("textEdit_2")
+        self.label_13 = QtWidgets.QLabel(parent=self.inventarioTab)
+        self.label_13.setGeometry(QtCore.QRect(460, 300, 111, 21))
+        self.label_13.setStyleSheet("QLabel{\n"
+"    background-color: white;\n"
+"}")
+        self.label_13.setObjectName("label_13")
+        self.doubleSpinBox = QtWidgets.QDoubleSpinBox(parent=self.inventarioTab)
+        self.doubleSpinBox.setGeometry(QtCore.QRect(620, 260, 62, 22))
+        self.doubleSpinBox.setStyleSheet("QDoubleSpinBox{\n"
+"    background-color: white;\n"
+"}")
+        self.doubleSpinBox.setObjectName("doubleSpinBox")
         self.tabs.addTab(self.inventarioTab, "")
         self.reportesTab = QtWidgets.QWidget()
         self.reportesTab.setObjectName("reportesTab")
@@ -376,7 +506,7 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuInventario.menuAction())
 
         self.retranslateUi(MainWindow)
-        self.tabs.setCurrentIndex(0)
+        self.tabs.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -387,7 +517,7 @@ class Ui_MainWindow(object):
         self.itemimg.setText(_translate("MainWindow", "Imagen del producto"))
         self.product_label.setText(_translate("MainWindow", "Producto"))
         self.quantity_label.setText(_translate("MainWindow", "Cantidad"))
-        self.total_label.setText(_translate("MainWindow", "Total"))
+        self.total_label.setText(_translate("MainWindow", "Subtotal"))
         self.characteristics.setText(_translate("MainWindow", "Caracteristicas"))
         self.tabs.setTabText(self.tabs.indexOf(self.crearordenTab), _translate("MainWindow", "Crear"))
         self.pushButton_3.setText(_translate("MainWindow", "Eliminar orden"))
@@ -399,6 +529,14 @@ class Ui_MainWindow(object):
         self.label_9.setText(_translate("MainWindow", "Imagen del producto"))
         self.pushButton_6.setText(_translate("MainWindow", "Eliminar item"))
         self.tabs.setTabText(self.tabs.indexOf(self.ordenesTab), _translate("MainWindow", "Ordenes"))
+        self.label_4.setText(_translate("MainWindow", "Ingredientes"))
+        self.label_10.setText(_translate("MainWindow", "Seleccionado"))
+        self.guardarcambios.setText(_translate("MainWindow", "Guardar cambios"))
+        self.label_5.setText(_translate("MainWindow", "Nombre"))
+        self.label_6.setText(_translate("MainWindow", "Cantidad disponible"))
+        self.label_11.setText(_translate("MainWindow", "Fecha de caducidad"))
+        self.label_12.setText(_translate("MainWindow", "Precio unitario"))
+        self.label_13.setText(_translate("MainWindow", "Descripción"))
         self.tabs.setTabText(self.tabs.indexOf(self.inventarioTab), _translate("MainWindow", "Inventario"))
         self.tabs.setTabText(self.tabs.indexOf(self.reportesTab), _translate("MainWindow", "Reportes"))
         self.menuFile.setTitle(_translate("MainWindow", "Archivos"))
