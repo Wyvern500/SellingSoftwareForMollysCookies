@@ -485,6 +485,82 @@ class Ui_MainWindow(object):
         self.tabs.addTab(self.inventarioTab, "")
         self.reportesTab = QtWidgets.QWidget()
         self.reportesTab.setObjectName("reportesTab")
+        self.gridLayoutWidget = QtWidgets.QWidget(parent=self.reportesTab)
+        self.gridLayoutWidget.setGeometry(QtCore.QRect(0, 0, 801, 491))
+        self.gridLayoutWidget.setObjectName("gridLayoutWidget")
+        self.gridLayout_2 = QtWidgets.QGridLayout(self.gridLayoutWidget)
+        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout_2.setObjectName("gridLayout_2")
+        self.listView_3 = QtWidgets.QListView(parent=self.gridLayoutWidget)
+        self.listView_3.setStyleSheet("QListView{\n"
+"    background-color: white;\n"
+"}")
+        self.listView_3.setObjectName("listView_3")
+        self.gridLayout_2.addWidget(self.listView_3, 1, 0, 1, 1)
+        self.calendarWidget = QtWidgets.QCalendarWidget(parent=self.gridLayoutWidget)
+        self.calendarWidget.setAutoFillBackground(False)
+        self.calendarWidget.setStyleSheet("QCalendarWidget {\n"
+"                background-color: #333333;\n"
+"                color: white;\n"
+"                font-family: Arial;\n"
+"                border-radius: 10px;\n"
+"            }\n"
+"\n"
+"QCalendarWidget QAbstractItemView:enabled {\n"
+"                background-color: #444444;\n"
+"                color: white;\n"
+"                selection-background-color: orange;\n"
+"                selection-color: white;\n"
+"            }\n"
+"            QCalendarWidget QAbstractItemView:disabled {\n"
+"                color: #777777;\n"
+"            }\n"
+"            QCalendarWidget QWidget#qt_calendar_navigationbar {\n"
+"                background-color: #555555;\n"
+"            }\n"
+"            QCalendarWidget QToolButton {\n"
+"                color: white;\n"
+"                background-color: #555555;\n"
+"                border: none;\n"
+"            }\n"
+"\n"
+" QCalendarWidget QToolButton::hover {\n"
+"                background-color: orange;\n"
+"                color: black;\n"
+"            }\n"
+"            QCalendarWidget QToolButton::pressed {\n"
+"                background-color: #ff6600;\n"
+"                color: white;\n"
+"            }\n"
+"            QCalendarWidget QToolButton::disabled {\n"
+"                background-color: #555555;\n"
+"                color: #777777;\n"
+"            }")
+        self.calendarWidget.setGridVisible(True)
+        self.calendarWidget.setObjectName("calendarWidget")
+        self.gridLayout_2.addWidget(self.calendarWidget, 0, 0, 1, 1)
+        self.pushButton = QtWidgets.QPushButton(parent=self.gridLayoutWidget)
+        self.pushButton.setStyleSheet("QPushButton {\n"
+"    font-family: Arial;\n"
+"    font-size: 18px;\n"
+"    font-weight: bold;\n"
+"    background-color: orange;\n"
+"    color: white;\n"
+"    width: 50px;\n"
+"    height: 50px;\n"
+"    border: 2px solid black;\n"
+"    border-radius: 10px;\n"
+"    transition: background-color 0.5s, transform 0.5s;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"    cursor: pointer;\n"
+"}\n"
+"")
+        self.pushButton.setObjectName("pushButton")
+        self.gridLayout_2.addWidget(self.pushButton, 2, 0, 1, 1)
         self.tabs.addTab(self.reportesTab, "")
         self.gridLayout.addWidget(self.tabs, 0, 1, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
@@ -506,7 +582,7 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuInventario.menuAction())
 
         self.retranslateUi(MainWindow)
-        self.tabs.setCurrentIndex(2)
+        self.tabs.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -538,6 +614,7 @@ class Ui_MainWindow(object):
         self.label_12.setText(_translate("MainWindow", "Precio unitario"))
         self.label_13.setText(_translate("MainWindow", "Descripción"))
         self.tabs.setTabText(self.tabs.indexOf(self.inventarioTab), _translate("MainWindow", "Inventario"))
+        self.pushButton.setText(_translate("MainWindow", "Seleccionar"))
         self.tabs.setTabText(self.tabs.indexOf(self.reportesTab), _translate("MainWindow", "Reportes"))
         self.menuFile.setTitle(_translate("MainWindow", "Archivos"))
         self.menuReportes.setTitle(_translate("MainWindow", "Reportes"))
