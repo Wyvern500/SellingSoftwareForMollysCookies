@@ -1,7 +1,9 @@
 import sys
-from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QSpinBox, QHBoxLayout, QListWidgetItem
-from archivo import Ui_MainWindow  # Importa el diseño generado por Qt Designer
+from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QSpinBox, QHBoxLayout, QListWidgetItem, \
+    QTableWidget, QTableWidgetItem
+from archivo import Ui_MainWindow  # Asegúrate de que este archivo existe y funciona correctamente
 from PyQt6.QtGui import QPixmap
+
 
 class CustomWidget(QWidget):
     def __init__(self, image_path, product_name, price, parent=None):
@@ -41,21 +43,23 @@ class CustomWidget(QWidget):
         self.price_label = price_label
 
 
-# Clase principal para la ventana
-from PyQt6.QtWidgets import QTableWidgetItem
-
 class Window(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setupUi(self)
 
-        # Inicializamos la lista de productos
+        # Configurar columnas de la tabla
+        self.tableWidget.setColumnCount(3)  # Número de columnas
+        self.tableWidget.setHorizontalHeaderLabels(["", "", ""])
+
+
+        # Inicializamos la lista de productos seleccionados
         self.selected_products = {}
 
         # Lista de productos con su información (imagen, nombre, precio)
         products = [
             {"image": "imagenes/galleta1.jpg", "name": "Galleta de Chocolate", "price": 10},
-            {"image": "imagenes/galleta2.jpg", "name": "Galleta de Chocolate de corazon", "price": 8},
+            {"image": "imagenes/galleta2.jpg", "name": "Galleta de Chocolate de corazón", "price": 8},
             # Agrega más productos según sea necesario
         ]
 
@@ -111,7 +115,7 @@ class Window(QMainWindow, Ui_MainWindow):
     def update_total_price(self):
         # Calculamos el precio total sumando los subtotales de todos los productos
         total_price = sum(details["price"] * details["quantity"] for details in self.selected_products.values())
-        self.totalPriceLabel.setText(f"Precio total: ${total_price:.2f}")
+        self.totalprice.setText(f"Precio total: ${total_price:.2f}")
 
 
 # Punto de entrada de la aplicación
@@ -120,3 +124,5 @@ if __name__ == "__main__":
     win = Window()  # Instanciamos la ventana principal
     win.show()  # Mostramos la ventana
     sys.exit(app.exec())  # Ejecutamos la aplicación
+
+
