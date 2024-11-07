@@ -12,10 +12,11 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(826, 590)
+        MainWindow.resize(820, 589)
+        MainWindow.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setStyleSheet("QWidget{\n"
-"    background-color: black;\n"
+"    background-color: #e8e8e8;\n"
 "}")
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
@@ -62,7 +63,7 @@ class Ui_MainWindow(object):
 "    color: white;\n"
 "    width: 50px;\n"
 "    height: 50px;\n"
-"    border: 2px solid black;\n"
+"    \n"
 "    border-radius: 10px;\n"
 "    transition: background-color 0.5s, transform 0.5s;\n"
 "}\n"
@@ -79,7 +80,7 @@ class Ui_MainWindow(object):
         self.createorder.setAutoRepeatDelay(300)
         self.createorder.setObjectName("createorder")
         self.totalprice = QtWidgets.QLabel(parent=self.crearordenTab)
-        self.totalprice.setGeometry(QtCore.QRect(570, 390, 211, 81))
+        self.totalprice.setGeometry(QtCore.QRect(420, 390, 371, 81))
         self.totalprice.setStyleSheet("QLabel{    \n"
 "    color: white;\n"
 "    font-family: Arial;\n"
@@ -91,56 +92,42 @@ class Ui_MainWindow(object):
         self.totalprice.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.totalprice.setObjectName("totalprice")
         self.searchbar = QtWidgets.QTextEdit(parent=self.crearordenTab)
-        self.searchbar.setGeometry(QtCore.QRect(0, 0, 401, 41))
+        self.searchbar.setGeometry(QtCore.QRect(0, 10, 401, 41))
         self.searchbar.setStyleSheet("QTextEdit{\n"
 "    background-color: white;\n"
 "    font-family: Arial;\n"
 "    font-size: 18px;\n"
 "}")
         self.searchbar.setObjectName("searchbar")
-        self.itemimg = QtWidgets.QLabel(parent=self.crearordenTab)
-        self.itemimg.setGeometry(QtCore.QRect(20, 390, 131, 81))
-        self.itemimg.setStyleSheet("QLabel{    \n"
-"    color: white;\n"
-"    font-family: Arial;\n"
-"    font-size: 18px;\n"
-"    font-weight: bold;\n"
-"    background-color: orange;\n"
-"    border-radius: 10px;\n"
-"}")
-        self.itemimg.setTextFormat(QtCore.Qt.TextFormat.AutoText)
-        self.itemimg.setScaledContents(False)
-        self.itemimg.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.itemimg.setObjectName("itemimg")
         self.product_label = QtWidgets.QLabel(parent=self.crearordenTab)
-        self.product_label.setGeometry(QtCore.QRect(430, 40, 91, 21))
+        self.product_label.setGeometry(QtCore.QRect(430, 20, 81, 21))
         self.product_label.setStyleSheet("QLabel{    \n"
-"    color: white;\n"
+"    color: black;\n"
 "    font-family: Arial;\n"
 "    font-size: 18px;\n"
 "    font-weight: bold;\n"
 "}")
         self.product_label.setObjectName("product_label")
         self.quantity_label = QtWidgets.QLabel(parent=self.crearordenTab)
-        self.quantity_label.setGeometry(QtCore.QRect(570, 40, 91, 21))
+        self.quantity_label.setGeometry(QtCore.QRect(560, 20, 81, 21))
         self.quantity_label.setStyleSheet("QLabel{    \n"
-"    color: white;\n"
+"    color: black;\n"
 "    font-family: Arial;\n"
 "    font-size: 18px;\n"
 "    font-weight: bold;\n"
 "}")
         self.quantity_label.setObjectName("quantity_label")
         self.total_label = QtWidgets.QLabel(parent=self.crearordenTab)
-        self.total_label.setGeometry(QtCore.QRect(700, 40, 81, 21))
+        self.total_label.setGeometry(QtCore.QRect(700, 20, 71, 21))
         self.total_label.setStyleSheet("QLabel{    \n"
-"    color: white;\n"
+"    color: black;\n"
 "    font-family: Arial;\n"
 "    font-size: 18px;\n"
 "    font-weight: bold;\n"
 "}")
         self.total_label.setObjectName("total_label")
         self.characteristics = QtWidgets.QLabel(parent=self.crearordenTab)
-        self.characteristics.setGeometry(QtCore.QRect(160, 390, 391, 81))
+        self.characteristics.setGeometry(QtCore.QRect(10, 390, 391, 81))
         self.characteristics.setStyleSheet("QLabel{    \n"
 "    color: white;\n"
 "    font-family: Arial;\n"
@@ -163,18 +150,12 @@ class Ui_MainWindow(object):
 "}")
         self.items.setObjectName("items")
         self.horizontalLayout_3.addWidget(self.items)
-        self.horizontalLayoutWidget_4 = QtWidgets.QWidget(parent=self.crearordenTab)
-        self.horizontalLayoutWidget_4.setGeometry(QtCore.QRect(420, 70, 371, 241))
-        self.horizontalLayoutWidget_4.setObjectName("horizontalLayoutWidget_4")
-        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_4)
-        self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
-        self.selecteditems = QtWidgets.QListWidget(parent=self.horizontalLayoutWidget_4)
-        self.selecteditems.setStyleSheet("QListView{\n"
-"    background-color: white;\n"
-"}")
-        self.selecteditems.setObjectName("selecteditems")
-        self.horizontalLayout_5.addWidget(self.selecteditems)
+        self.tableWidget = QtWidgets.QTableWidget(parent=self.crearordenTab)
+        self.tableWidget.setGeometry(QtCore.QRect(420, 60, 361, 251))
+        self.tableWidget.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.tableWidget.setObjectName("tableWidget")
+        self.tableWidget.setColumnCount(0)
+        self.tableWidget.setRowCount(0)
         self.tabs.addTab(self.crearordenTab, "")
         self.ordenesTab = QtWidgets.QWidget()
         self.ordenesTab.setObjectName("ordenesTab")
@@ -562,10 +543,10 @@ class Ui_MainWindow(object):
         self.pushButton.setObjectName("pushButton")
         self.gridLayout_2.addWidget(self.pushButton, 2, 0, 1, 1)
         self.tabs.addTab(self.reportesTab, "")
-        self.gridLayout.addWidget(self.tabs, 0, 1, 1, 1)
+        self.gridLayout.addWidget(self.tabs, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 826, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 820, 22))
         self.menubar.setObjectName("menubar")
         self.menuFile = QtWidgets.QMenu(parent=self.menubar)
         self.menuFile.setObjectName("menuFile")
@@ -590,7 +571,6 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "SellingSoftwareForMollysCookies"))
         self.createorder.setText(_translate("MainWindow", "Crear orden"))
         self.totalprice.setText(_translate("MainWindow", "Precio total"))
-        self.itemimg.setText(_translate("MainWindow", "Imagen del producto"))
         self.product_label.setText(_translate("MainWindow", "Producto"))
         self.quantity_label.setText(_translate("MainWindow", "Cantidad"))
         self.total_label.setText(_translate("MainWindow", "Subtotal"))
