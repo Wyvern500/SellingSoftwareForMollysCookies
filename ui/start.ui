@@ -51,13 +51,13 @@ QTabBar::tab:hover {
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="crearordenTab">
        <attribute name="title">
         <string>Crear</string>
        </attribute>
-       <widget class="QPushButton" name="createorder">
+       <widget class="QPushButton" name="crear_createorder_button">
         <property name="geometry">
          <rect>
           <x>420</x>
@@ -85,7 +85,7 @@ QTabBar::tab:hover {
 	font-size: 12;
 	font-weight: bold;
 	background-color: orange;
-	color: white;
+	color: black;
 	width: 50px;
     height: 50px;
     
@@ -110,7 +110,7 @@ QPushButton:hover {
          <number>300</number>
         </property>
        </widget>
-       <widget class="QLabel" name="totalprice">
+       <widget class="QLabel" name="crear_totalprice_button">
         <property name="geometry">
          <rect>
           <x>420</x>
@@ -121,7 +121,7 @@ QPushButton:hover {
         </property>
         <property name="styleSheet">
          <string notr="true">QLabel{	
-	color: white;
+	color: black;
 	font-family: Arial;
 	font-size: 18px;
 	font-weight: bold;
@@ -216,32 +216,6 @@ QPushButton:hover {
          <string>Subtotal</string>
         </property>
        </widget>
-       <widget class="QLabel" name="characteristics">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>390</y>
-          <width>391</width>
-          <height>81</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel{	
-	color: white;
-	font-family: Arial;
-	font-size: 18px;
-	font-weight: bold;
-	background-color: orange;
-	border-radius: 10px;
-}</string>
-        </property>
-        <property name="text">
-         <string>Caracteristicas</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
        <widget class="QWidget" name="horizontalLayoutWidget_3">
         <property name="geometry">
          <rect>
@@ -253,17 +227,39 @@ QPushButton:hover {
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
-          <widget class="QListWidget" name="items">
+          <widget class="QListWidget" name="crear_items_listWidget">
            <property name="styleSheet">
-            <string notr="true">QListView{
-	background-color: white;
-}</string>
+            <string notr="true">QScrollBar:vertical {
+    border: none;
+    background: transparent;
+    width: 8px;
+}
+
+QScrollBar::handle:vertical {
+    background: #b0b0b0;  /* Gris más claro */
+    min-height: 30px;
+    border-radius: 4px;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    border: none;
+    background: transparent;
+    height: 0px;
+}
+
+QListView {
+    background-color: white;
+}
+
+
+</string>
            </property>
           </widget>
          </item>
         </layout>
        </widget>
-       <widget class="QTableWidget" name="tableWidget">
+       <widget class="QTableWidget" name="crear_orderList_tableWidget">
         <property name="geometry">
          <rect>
           <x>420</x>
@@ -275,6 +271,51 @@ QPushButton:hover {
         <property name="styleSheet">
          <string notr="true">background-color: rgb(255, 255, 255);</string>
         </property>
+       </widget>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>380</y>
+          <width>391</width>
+          <height>101</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox {
+    font: 12pt &quot;Segoe UI&quot;;
+}
+
+QGroupBox:title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center;
+    padding: 0 10px;
+	font: 12pt &quot;Segoe UI&quot;;
+}
+</string>
+        </property>
+        <property name="title">
+         <string>Características</string>
+        </property>
+        <widget class="QTextEdit" name="crear_description_textEdit">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>371</width>
+           <height>61</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="placeholderText">
+          <string>Caracteristicas del producto</string>
+         </property>
+        </widget>
        </widget>
       </widget>
       <widget class="QWidget" name="ordenesTab">
@@ -353,7 +394,7 @@ QPushButton:hover {
 	font-size: 12;
 	font-weight: bold;
 	background-color: orange;
-	color: white;
+	color: black;
 	width: 50px;
     height: 50px;
     border: 2px solid black;
@@ -389,7 +430,7 @@ QPushButton:hover {
             </property>
             <property name="styleSheet">
              <string notr="true">QLabel{	
-	color: white;
+	color: black;
 	font-family: Arial;
 	font-size: 18px;
 	font-weight: bold;
@@ -410,7 +451,7 @@ QPushButton:hover {
             </property>
             <property name="styleSheet">
              <string notr="true">QLabel{	
-	color: white;
+	color: black;
 	font-family: Arial;
 	font-size: 18px;
 	font-weight: bold;
@@ -431,7 +472,7 @@ QPushButton:hover {
             </property>
             <property name="styleSheet">
              <string notr="true">QLabel{	
-	color: white;
+	color: black;
 	font-family: Arial;
 	font-size: 18px;
 	font-weight: bold;
@@ -452,7 +493,7 @@ QPushButton:hover {
             </property>
             <property name="styleSheet">
              <string notr="true">QLabel{	
-	color: white;
+	color: black;
 	font-family: Arial;
 	font-size: 18px;
 	font-weight: bold;
@@ -478,7 +519,7 @@ QPushButton:hover {
             </property>
             <property name="styleSheet">
              <string notr="true">QLabel{	
-	color: white;
+	color: black;
 	font-family: Arial;
 	font-size: 18px;
 	font-weight: bold;
@@ -504,7 +545,7 @@ QPushButton:hover {
             </property>
             <property name="styleSheet">
              <string notr="true">QLabel{	
-	color: white;
+	color: black;
 	font-family: Arial;
 	font-size: 18px;
 	font-weight: bold;
@@ -585,7 +626,7 @@ QPushButton:hover {
 	font-size: 12;
 	font-weight: bold;
 	background-color: orange;
-	color: white;
+	color: black;
 	width: 50px;
     height: 50px;
     border: 2px solid black;
@@ -613,312 +654,6 @@ QPushButton:hover {
           </widget>
          </item>
         </layout>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="inventarioTab">
-       <attribute name="title">
-        <string>Inventario</string>
-       </attribute>
-       <widget class="QTreeView" name="treeView_2">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>60</y>
-          <width>399</width>
-          <height>401</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QTreeView{
-	background-color: white;
-}
-
-</string>
-        </property>
-        <attribute name="headerMinimumSectionSize">
-         <number>39</number>
-        </attribute>
-       </widget>
-       <widget class="QLabel" name="label_4">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>20</y>
-          <width>131</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel{	
-	color: white;
-	font-family: Arial;
-	font-size: 18px;
-	font-weight: bold;
-}</string>
-        </property>
-        <property name="text">
-         <string>Ingredientes</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_10">
-        <property name="geometry">
-         <rect>
-          <x>440</x>
-          <y>50</y>
-          <width>331</width>
-          <height>51</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel{	
-	color: white;
-	font-family: Arial;
-	font-size: 18px;
-	font-weight: bold;
-	background-color: orange;
-	border-radius: 10px;
-}</string>
-        </property>
-        <property name="text">
-         <string>Seleccionado</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="guardarcambios">
-        <property name="geometry">
-         <rect>
-          <x>430</x>
-          <y>400</y>
-          <width>351</width>
-          <height>61</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Arial</family>
-          <pointsize>12</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="cursor">
-         <cursorShape>OpenHandCursor</cursorShape>
-        </property>
-        <property name="layoutDirection">
-         <enum>Qt::RightToLeft</enum>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-	font-family: Arial;
-	font-size: 12;
-	font-weight: bold;
-	background-color: orange;
-	color: white;
-	width: 50px;
-    height: 50px;
-    border: 2px solid black;
-    border-radius: 10px;
-	transition: background-color 0.5s, transform 0.5s;
-}
-
-QPushButton:hover {
-	background-color: white;
-	color: black;
-    cursor: pointer;
-}
-
-
-
-</string>
-        </property>
-        <property name="text">
-         <string>Guardar cambios</string>
-        </property>
-        <property name="autoRepeatDelay">
-         <number>300</number>
-        </property>
-       </widget>
-       <widget class="QListView" name="listView_2">
-        <property name="geometry">
-         <rect>
-          <x>440</x>
-          <y>120</y>
-          <width>331</width>
-          <height>261</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QListView{
-	background-color: white;
-	
-}</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_5">
-        <property name="geometry">
-         <rect>
-          <x>460</x>
-          <y>140</y>
-          <width>111</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel{
-	background-color: white;
-}</string>
-        </property>
-        <property name="text">
-         <string>Nombre</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_6">
-        <property name="geometry">
-         <rect>
-          <x>460</x>
-          <y>180</y>
-          <width>111</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel{
-	background-color: white;
-}</string>
-        </property>
-        <property name="text">
-         <string>Cantidad disponible</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_11">
-        <property name="geometry">
-         <rect>
-          <x>460</x>
-          <y>220</y>
-          <width>111</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel{
-	background-color: white;
-}</string>
-        </property>
-        <property name="text">
-         <string>Fecha de caducidad</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_12">
-        <property name="geometry">
-         <rect>
-          <x>460</x>
-          <y>260</y>
-          <width>111</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel{
-	background-color: white;
-}</string>
-        </property>
-        <property name="text">
-         <string>Precio unitario</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit">
-        <property name="geometry">
-         <rect>
-          <x>620</x>
-          <y>140</y>
-          <width>113</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLineEdit{
-	background-color: white;
-}</string>
-        </property>
-       </widget>
-       <widget class="QSpinBox" name="spinBox">
-        <property name="geometry">
-         <rect>
-          <x>620</x>
-          <y>180</y>
-          <width>42</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QSpinBox{
-	background-color: white;
-}</string>
-        </property>
-       </widget>
-       <widget class="QDateEdit" name="dateEdit">
-        <property name="geometry">
-         <rect>
-          <x>620</x>
-          <y>220</y>
-          <width>110</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QDateEdit{
-	background-color: white;
-}</string>
-        </property>
-       </widget>
-       <widget class="QTextEdit" name="textEdit_2">
-        <property name="geometry">
-         <rect>
-          <x>620</x>
-          <y>300</y>
-          <width>104</width>
-          <height>71</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QTextEdit{
-	background-color: white;
-}</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_13">
-        <property name="geometry">
-         <rect>
-          <x>460</x>
-          <y>300</y>
-          <width>111</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel{
-	background-color: white;
-}</string>
-        </property>
-        <property name="text">
-         <string>Descripción</string>
-        </property>
-       </widget>
-       <widget class="QDoubleSpinBox" name="doubleSpinBox">
-        <property name="geometry">
-         <rect>
-          <x>620</x>
-          <y>260</y>
-          <width>62</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QDoubleSpinBox{
-	background-color: white;
-}</string>
-        </property>
        </widget>
       </widget>
       <widget class="QWidget" name="reportesTab">
@@ -952,7 +687,7 @@ QPushButton:hover {
            <property name="styleSheet">
             <string notr="true">QCalendarWidget {
                 background-color: #333333;
-                color: white;
+                color: black;
                 font-family: Arial;
                 border-radius: 10px;
             }
@@ -1001,7 +736,7 @@ QCalendarWidget QAbstractItemView:enabled {
 	font-size: 18px;
 	font-weight: bold;
 	background-color: orange;
-	color: white;
+	color: black;
 	width: 50px;
     height: 50px;
     border: 2px solid black;
@@ -1022,6 +757,565 @@ QPushButton:hover {
           </widget>
          </item>
         </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="inventarioTab">
+       <attribute name="title">
+        <string>Inventario</string>
+       </attribute>
+       <widget class="QListWidget" name="inv_products_list_widget">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>60</y>
+          <width>399</width>
+          <height>401</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QListView{
+	background-color: white;
+}
+
+QScrollBar:vertical {
+    border: none;
+    background: transparent;
+    width: 8px;
+}
+
+QScrollBar::handle:vertical {
+    background: #b0b0b0;  /* Gris más claro */
+    min-height: 30px;
+    border-radius: 4px;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    border: none;
+    background: transparent;
+    height: 0px;
+}
+
+
+</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_4">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>131</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{	
+	color: black;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+}</string>
+        </property>
+        <property name="text">
+         <string>Ingredientes</string>
+        </property>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_5">
+        <property name="geometry">
+         <rect>
+          <x>460</x>
+          <y>80</y>
+          <width>311</width>
+          <height>381</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QGroupBox {
+        border: 2px solid pink; /* Color y grosor del borde */
+        border-radius: 5px; /* Bordes redondeados */
+        margin-top: 10px; /* Espacio entre el borde y el título */
+		background-color: white;
+        padding: 10px; /* Espacio interno del contenido */
+    }
+QGroupBox * {
+        background-color: white;  /* Aplica el color de fondo a todos los widgets hijos */
+    }
+    QGroupBox::title {
+        subcontrol-origin: margin;
+        subcontrol-position: top center; /* Posición del título */
+        padding: 0 5px; /* Espacio alrededor del título */
+        color: black; /* Color del texto del título */
+        font-weight: bold; /* Negrita para el título */
+    }</string>
+        </property>
+        <property name="title">
+         <string>Atributos del ingrediente</string>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <widget class="QWidget" name="verticalLayoutWidget_2">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>20</y>
+           <width>291</width>
+           <height>351</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <layout class="QFormLayout" name="formLayout">
+            <property name="leftMargin">
+             <number>10</number>
+            </property>
+            <property name="topMargin">
+             <number>10</number>
+            </property>
+            <property name="rightMargin">
+             <number>10</number>
+            </property>
+            <property name="bottomMargin">
+             <number>10</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_5">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+	background-color: white;
+}</string>
+              </property>
+              <property name="text">
+               <string>Nombre</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="inv_name_line_edit">
+              <property name="styleSheet">
+               <string notr="true">QLineEdit{
+	background-color: white;
+}</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_6">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+	background-color: white;
+}</string>
+              </property>
+              <property name="text">
+               <string>Cantidad disponible</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QSpinBox" name="inv_cantidad_spin_box">
+              <property name="styleSheet">
+               <string notr="true">QSpinBox{
+	background-color: white;
+}</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_12">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+	background-color: white;
+}</string>
+              </property>
+              <property name="text">
+               <string>Precio unitario</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QDoubleSpinBox" name="inv_precio_double_spin_box">
+              <property name="styleSheet">
+               <string notr="true">QDoubleSpinBox{
+	background-color: white;
+}</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_13">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+	background-color: white;
+}</string>
+              </property>
+              <property name="text">
+               <string>Descripción</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QTextEdit" name="inv_descripcion_item">
+              <property name="styleSheet">
+               <string notr="true">QTextEdit{
+	background-color: white;
+}</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_17">
+              <property name="text">
+               <string>Tipo de producto</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QComboBox" name="inv_tipo_producto_combo_box">
+              <item>
+               <property name="text">
+                <string>Unidad</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Kg</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QPushButton" name="inv_elegir_imagen_button">
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	background-color: pink;
+}</string>
+              </property>
+              <property name="text">
+               <string>Cargar imagen</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QLabel" name="inv_imagen_ingrediente">
+              <property name="maximumSize">
+               <size>
+                <width>64</width>
+                <height>64</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap>../../../imagenes/galleta2.jpg</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QPushButton" name="inv_crear_ingrediente">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	background-color: pink;
+}</string>
+              </property>
+              <property name="text">
+               <string>Crear ingrediente</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QLabel" name="inv_seleccionado_label">
+        <property name="geometry">
+         <rect>
+          <x>450</x>
+          <y>20</y>
+          <width>331</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{	
+	color: black;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+	background-color: orange;
+	border-radius: 10px;
+}</string>
+        </property>
+        <property name="text">
+         <string>Seleccionado</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="inv_busqueda_line_edit">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>20</y>
+          <width>261</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit{
+	background-color:white;
+}</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="agregarproductoTab">
+       <attribute name="title">
+        <string>Agregar Producto</string>
+       </attribute>
+       <widget class="QGroupBox" name="groupBox_2">
+        <property name="geometry">
+         <rect>
+          <x>480</x>
+          <y>20</y>
+          <width>261</width>
+          <height>441</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string/>
+        </property>
+        <widget class="QLabel" name="add_labelDropImage">
+         <property name="geometry">
+          <rect>
+           <x>60</x>
+           <y>20</y>
+           <width>141</width>
+           <height>131</height>
+          </rect>
+         </property>
+         <property name="acceptDrops">
+          <bool>true</bool>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>../imagenes/iconoGaleria.jpeg</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="add_searchImageButton">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>170</y>
+           <width>241</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: black;
+font-family: Segoe UI;
+font-size: 14px;
+ font-weight: bold;
+background-color: orange;
+border-radius: 8px</string>
+         </property>
+         <property name="text">
+          <string>Agregar imagen</string>
+         </property>
+        </widget>
+        <widget class="QGroupBox" name="groupBox_4">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>220</y>
+           <width>221</width>
+           <height>201</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QGroupBox:title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center;
+    padding: 0 10px;
+	font: 12pt &quot;Segoe UI&quot;;
+}
+</string>
+         </property>
+         <property name="title">
+          <string>Vista previa</string>
+         </property>
+         <widget class="QLabel" name="add_labelImagePreview">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>30</y>
+            <width>221</width>
+            <height>171</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_3">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>421</width>
+          <height>451</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string/>
+        </property>
+        <widget class="QLabel" name="label_14">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>20</y>
+           <width>151</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-family: Segoe UI;
+font-size: 14px;
+font-weight: bold;</string>
+         </property>
+         <property name="text">
+          <string>Nombre del producto</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="add_lineEditProductName">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>60</y>
+           <width>401</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: white;
+font-family: Segoe UI;
+font-size: 15px;</string>
+         </property>
+        </widget>
+        <widget class="QTextEdit" name="add_textEditDescription">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>200</y>
+           <width>401</width>
+           <height>151</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: white;
+font-family: Segoe UI;
+font-size: 15px;</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_15">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>170</y>
+           <width>81</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-family: Segoe UI;
+font-size: 14px;
+font-weight: bold;</string>
+         </property>
+         <property name="text">
+          <string>Descripción</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_16">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>100</y>
+           <width>51</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-family: Segoe UI;
+font-size: 14px;
+font-weight: bold;</string>
+         </property>
+         <property name="text">
+          <string>Precio</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="add_lineEditPrice">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>130</y>
+           <width>401</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: white;
+font-family: Segoe UI;
+font-size: 15px;</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="add_saveChangesButton">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>370</y>
+           <width>401</width>
+           <height>71</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: black;
+font-family: Segoe UI;
+font-size: 16px;
+ font-weight: bold;
+background-color: orange;
+border-radius: 8px</string>
+         </property>
+         <property name="text">
+          <string>Guardar cambios</string>
+         </property>
+        </widget>
        </widget>
       </widget>
      </widget>
