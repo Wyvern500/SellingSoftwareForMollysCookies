@@ -1,0 +1,1 @@
+.venv/Scripts/python.exe pyuic6 -x ui/start.ui -o gui.py

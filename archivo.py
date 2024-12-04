@@ -60,7 +60,7 @@ class Ui_MainWindow(object):
 "    font-size: 12;\n"
 "    font-weight: bold;\n"
 "    background-color: orange;\n"
-"    color: white;\n"
+"    color: black;\n"
 "    width: 50px;\n"
 "    height: 50px;\n"
 "    \n"
@@ -82,7 +82,7 @@ class Ui_MainWindow(object):
         self.totalprice = QtWidgets.QLabel(parent=self.crearordenTab)
         self.totalprice.setGeometry(QtCore.QRect(420, 390, 371, 81))
         self.totalprice.setStyleSheet("QLabel{    \n"
-"    color: white;\n"
+"    color: black;\n"
 "    font-family: Arial;\n"
 "    font-size: 18px;\n"
 "    font-weight: bold;\n"
@@ -126,18 +126,6 @@ class Ui_MainWindow(object):
 "    font-weight: bold;\n"
 "}")
         self.total_label.setObjectName("total_label")
-        self.characteristics = QtWidgets.QLabel(parent=self.crearordenTab)
-        self.characteristics.setGeometry(QtCore.QRect(10, 390, 391, 81))
-        self.characteristics.setStyleSheet("QLabel{    \n"
-"    color: white;\n"
-"    font-family: Arial;\n"
-"    font-size: 18px;\n"
-"    font-weight: bold;\n"
-"    background-color: orange;\n"
-"    border-radius: 10px;\n"
-"}")
-        self.characteristics.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.characteristics.setObjectName("characteristics")
         self.horizontalLayoutWidget_3 = QtWidgets.QWidget(parent=self.crearordenTab)
         self.horizontalLayoutWidget_3.setGeometry(QtCore.QRect(0, 60, 401, 311))
         self.horizontalLayoutWidget_3.setObjectName("horizontalLayoutWidget_3")
@@ -156,6 +144,25 @@ class Ui_MainWindow(object):
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(0)
         self.tableWidget.setRowCount(0)
+        self.groupBox = QtWidgets.QGroupBox(parent=self.crearordenTab)
+        self.groupBox.setGeometry(QtCore.QRect(10, 380, 391, 101))
+        self.groupBox.setStyleSheet("QGroupBox {\n"
+"    font: 12pt \"Segoe UI\";\n"
+"}\n"
+"\n"
+"QGroupBox:title {\n"
+"    subcontrol-origin: margin;\n"
+"    subcontrol-position: top center;\n"
+"    padding: 0 10px;\n"
+"    font: 12pt \"Segoe UI\";\n"
+"}\n"
+"")
+        self.groupBox.setObjectName("groupBox")
+        self.textEdit_2 = QtWidgets.QTextEdit(parent=self.groupBox)
+        self.textEdit_2.setGeometry(QtCore.QRect(10, 30, 371, 61))
+        self.textEdit_2.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.textEdit_2.setReadOnly(True)
+        self.textEdit_2.setObjectName("textEdit_2")
         self.tabs.addTab(self.crearordenTab, "")
         self.ordenesTab = QtWidgets.QWidget()
         self.ordenesTab.setObjectName("ordenesTab")
@@ -198,7 +205,7 @@ class Ui_MainWindow(object):
 "    font-size: 12;\n"
 "    font-weight: bold;\n"
 "    background-color: orange;\n"
-"    color: white;\n"
+"    color: black;\n"
 "    width: 50px;\n"
 "    height: 50px;\n"
 "    border: 2px solid black;\n"
@@ -220,7 +227,7 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(parent=self.widget)
         self.label.setGeometry(QtCore.QRect(430, 50, 91, 21))
         self.label.setStyleSheet("QLabel{    \n"
-"    color: white;\n"
+"    color: black;\n"
 "    font-family: Arial;\n"
 "    font-size: 18px;\n"
 "    font-weight: bold;\n"
@@ -229,7 +236,7 @@ class Ui_MainWindow(object):
         self.label_2 = QtWidgets.QLabel(parent=self.widget)
         self.label_2.setGeometry(QtCore.QRect(570, 50, 91, 21))
         self.label_2.setStyleSheet("QLabel{    \n"
-"    color: white;\n"
+"    color: black;\n"
 "    font-family: Arial;\n"
 "    font-size: 18px;\n"
 "    font-weight: bold;\n"
@@ -238,7 +245,7 @@ class Ui_MainWindow(object):
         self.label_3 = QtWidgets.QLabel(parent=self.widget)
         self.label_3.setGeometry(QtCore.QRect(730, 50, 51, 21))
         self.label_3.setStyleSheet("QLabel{    \n"
-"    color: white;\n"
+"    color: black;\n"
 "    font-family: Arial;\n"
 "    font-size: 18px;\n"
 "    font-weight: bold;\n"
@@ -247,7 +254,7 @@ class Ui_MainWindow(object):
         self.label_7 = QtWidgets.QLabel(parent=self.widget)
         self.label_7.setGeometry(QtCore.QRect(310, 410, 211, 61))
         self.label_7.setStyleSheet("QLabel{    \n"
-"    color: white;\n"
+"    color: black;\n"
 "    font-family: Arial;\n"
 "    font-size: 18px;\n"
 "    font-weight: bold;\n"
@@ -259,7 +266,7 @@ class Ui_MainWindow(object):
         self.label_8 = QtWidgets.QLabel(parent=self.widget)
         self.label_8.setGeometry(QtCore.QRect(540, 340, 241, 51))
         self.label_8.setStyleSheet("QLabel{    \n"
-"    color: white;\n"
+"    color: black;\n"
 "    font-family: Arial;\n"
 "    font-size: 18px;\n"
 "    font-weight: bold;\n"
@@ -271,7 +278,7 @@ class Ui_MainWindow(object):
         self.label_9 = QtWidgets.QLabel(parent=self.widget)
         self.label_9.setGeometry(QtCore.QRect(430, 340, 101, 51))
         self.label_9.setStyleSheet("QLabel{    \n"
-"    color: white;\n"
+"    color: black;\n"
 "    font-family: Arial;\n"
 "    font-size: 18px;\n"
 "    font-weight: bold;\n"
@@ -310,7 +317,7 @@ class Ui_MainWindow(object):
 "    font-size: 12;\n"
 "    font-weight: bold;\n"
 "    background-color: orange;\n"
-"    color: white;\n"
+"    color: black;\n"
 "    width: 50px;\n"
 "    height: 50px;\n"
 "    border: 2px solid black;\n"
@@ -345,39 +352,39 @@ class Ui_MainWindow(object):
         self.label_4 = QtWidgets.QLabel(parent=self.inventarioTab)
         self.label_4.setGeometry(QtCore.QRect(10, 20, 131, 21))
         self.label_4.setStyleSheet("QLabel{    \n"
-"    color: white;\n"
+"    color: black;\n"
 "    font-family: Arial;\n"
 "    font-size: 18px;\n"
 "    font-weight: bold;\n"
 "}")
         self.label_4.setObjectName("label_4")
-        self.label_10 = QtWidgets.QLabel(parent=self.inventarioTab)
-        self.label_10.setGeometry(QtCore.QRect(440, 50, 331, 51))
-        self.label_10.setStyleSheet("QLabel{    \n"
-"    color: white;\n"
+        self.inv_seleccionado_label = QtWidgets.QLabel(parent=self.inventarioTab)
+        self.inv_seleccionado_label.setGeometry(QtCore.QRect(440, 50, 331, 51))
+        self.inv_seleccionado_label.setStyleSheet("QLabel{    \n"
+"    color: black;\n"
 "    font-family: Arial;\n"
 "    font-size: 18px;\n"
 "    font-weight: bold;\n"
 "    background-color: orange;\n"
 "    border-radius: 10px;\n"
 "}")
-        self.label_10.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_10.setObjectName("label_10")
-        self.guardarcambios = QtWidgets.QPushButton(parent=self.inventarioTab)
-        self.guardarcambios.setGeometry(QtCore.QRect(430, 400, 351, 61))
+        self.inv_seleccionado_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.inv_seleccionado_label.setObjectName("inv_seleccionado_label")
+        self.inv_guardar_cambios_btn = QtWidgets.QPushButton(parent=self.inventarioTab)
+        self.inv_guardar_cambios_btn.setGeometry(QtCore.QRect(430, 400, 351, 61))
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(12)
         font.setBold(True)
-        self.guardarcambios.setFont(font)
-        self.guardarcambios.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.OpenHandCursor))
-        self.guardarcambios.setLayoutDirection(QtCore.Qt.LayoutDirection.RightToLeft)
-        self.guardarcambios.setStyleSheet("QPushButton {\n"
+        self.inv_guardar_cambios_btn.setFont(font)
+        self.inv_guardar_cambios_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.OpenHandCursor))
+        self.inv_guardar_cambios_btn.setLayoutDirection(QtCore.Qt.LayoutDirection.RightToLeft)
+        self.inv_guardar_cambios_btn.setStyleSheet("QPushButton {\n"
 "    font-family: Arial;\n"
 "    font-size: 12;\n"
 "    font-weight: bold;\n"
 "    background-color: orange;\n"
-"    color: white;\n"
+"    color: black;\n"
 "    width: 50px;\n"
 "    height: 50px;\n"
 "    border: 2px solid black;\n"
@@ -394,8 +401,8 @@ class Ui_MainWindow(object):
 "\n"
 "\n"
 "")
-        self.guardarcambios.setAutoRepeatDelay(300)
-        self.guardarcambios.setObjectName("guardarcambios")
+        self.inv_guardar_cambios_btn.setAutoRepeatDelay(300)
+        self.inv_guardar_cambios_btn.setObjectName("inv_guardar_cambios_btn")
         self.listView_2 = QtWidgets.QListView(parent=self.inventarioTab)
         self.listView_2.setGeometry(QtCore.QRect(440, 120, 331, 261))
         self.listView_2.setStyleSheet("QListView{\n"
@@ -427,42 +434,42 @@ class Ui_MainWindow(object):
 "    background-color: white;\n"
 "}")
         self.label_12.setObjectName("label_12")
-        self.lineEdit = QtWidgets.QLineEdit(parent=self.inventarioTab)
-        self.lineEdit.setGeometry(QtCore.QRect(620, 140, 113, 22))
-        self.lineEdit.setStyleSheet("QLineEdit{\n"
+        self.inv_name_line_edit = QtWidgets.QLineEdit(parent=self.inventarioTab)
+        self.inv_name_line_edit.setGeometry(QtCore.QRect(620, 140, 113, 22))
+        self.inv_name_line_edit.setStyleSheet("QLineEdit{\n"
 "    background-color: white;\n"
 "}")
-        self.lineEdit.setObjectName("lineEdit")
-        self.spinBox = QtWidgets.QSpinBox(parent=self.inventarioTab)
-        self.spinBox.setGeometry(QtCore.QRect(620, 180, 42, 22))
-        self.spinBox.setStyleSheet("QSpinBox{\n"
+        self.inv_name_line_edit.setObjectName("inv_name_line_edit")
+        self.inv_cantidad_spin_box = QtWidgets.QSpinBox(parent=self.inventarioTab)
+        self.inv_cantidad_spin_box.setGeometry(QtCore.QRect(620, 180, 42, 22))
+        self.inv_cantidad_spin_box.setStyleSheet("QSpinBox{\n"
 "    background-color: white;\n"
 "}")
-        self.spinBox.setObjectName("spinBox")
-        self.dateEdit = QtWidgets.QDateEdit(parent=self.inventarioTab)
-        self.dateEdit.setGeometry(QtCore.QRect(620, 220, 110, 22))
-        self.dateEdit.setStyleSheet("QDateEdit{\n"
+        self.inv_cantidad_spin_box.setObjectName("inv_cantidad_spin_box")
+        self.inv_caducidad_date_edit = QtWidgets.QDateEdit(parent=self.inventarioTab)
+        self.inv_caducidad_date_edit.setGeometry(QtCore.QRect(620, 220, 110, 22))
+        self.inv_caducidad_date_edit.setStyleSheet("QDateEdit{\n"
 "    background-color: white;\n"
 "}")
-        self.dateEdit.setObjectName("dateEdit")
-        self.textEdit_2 = QtWidgets.QTextEdit(parent=self.inventarioTab)
-        self.textEdit_2.setGeometry(QtCore.QRect(620, 300, 104, 71))
-        self.textEdit_2.setStyleSheet("QTextEdit{\n"
+        self.inv_caducidad_date_edit.setObjectName("inv_caducidad_date_edit")
+        self.inv_descripcion_item = QtWidgets.QTextEdit(parent=self.inventarioTab)
+        self.inv_descripcion_item.setGeometry(QtCore.QRect(620, 300, 104, 71))
+        self.inv_descripcion_item.setStyleSheet("QTextEdit{\n"
 "    background-color: white;\n"
 "}")
-        self.textEdit_2.setObjectName("textEdit_2")
+        self.inv_descripcion_item.setObjectName("inv_descripcion_item")
         self.label_13 = QtWidgets.QLabel(parent=self.inventarioTab)
         self.label_13.setGeometry(QtCore.QRect(460, 300, 111, 21))
         self.label_13.setStyleSheet("QLabel{\n"
 "    background-color: white;\n"
 "}")
         self.label_13.setObjectName("label_13")
-        self.doubleSpinBox = QtWidgets.QDoubleSpinBox(parent=self.inventarioTab)
-        self.doubleSpinBox.setGeometry(QtCore.QRect(620, 260, 62, 22))
-        self.doubleSpinBox.setStyleSheet("QDoubleSpinBox{\n"
+        self.inv_precio_double_spin_box = QtWidgets.QDoubleSpinBox(parent=self.inventarioTab)
+        self.inv_precio_double_spin_box.setGeometry(QtCore.QRect(620, 260, 62, 22))
+        self.inv_precio_double_spin_box.setStyleSheet("QDoubleSpinBox{\n"
 "    background-color: white;\n"
 "}")
-        self.doubleSpinBox.setObjectName("doubleSpinBox")
+        self.inv_precio_double_spin_box.setObjectName("inv_precio_double_spin_box")
         self.tabs.addTab(self.inventarioTab, "")
         self.reportesTab = QtWidgets.QWidget()
         self.reportesTab.setObjectName("reportesTab")
@@ -482,7 +489,7 @@ class Ui_MainWindow(object):
         self.calendarWidget.setAutoFillBackground(False)
         self.calendarWidget.setStyleSheet("QCalendarWidget {\n"
 "                background-color: #333333;\n"
-"                color: white;\n"
+"                color: black;\n"
 "                font-family: Arial;\n"
 "                border-radius: 10px;\n"
 "            }\n"
@@ -526,7 +533,7 @@ class Ui_MainWindow(object):
 "    font-size: 18px;\n"
 "    font-weight: bold;\n"
 "    background-color: orange;\n"
-"    color: white;\n"
+"    color: black;\n"
 "    width: 50px;\n"
 "    height: 50px;\n"
 "    border: 2px solid black;\n"
@@ -543,7 +550,7 @@ class Ui_MainWindow(object):
         self.pushButton.setObjectName("pushButton")
         self.gridLayout_2.addWidget(self.pushButton, 2, 0, 1, 1)
         self.tabs.addTab(self.reportesTab, "")
-        self.gridLayout.addWidget(self.tabs, 0, 0, 1, 1)
+        self.gridLayout.addWidget(self.tabs, 1, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 820, 22))
@@ -574,7 +581,8 @@ class Ui_MainWindow(object):
         self.product_label.setText(_translate("MainWindow", "Producto"))
         self.quantity_label.setText(_translate("MainWindow", "Cantidad"))
         self.total_label.setText(_translate("MainWindow", "Subtotal"))
-        self.characteristics.setText(_translate("MainWindow", "Caracteristicas"))
+        self.groupBox.setTitle(_translate("MainWindow", "Características"))
+        self.textEdit_2.setPlaceholderText(_translate("MainWindow", "Caracteristicas del producto"))
         self.tabs.setTabText(self.tabs.indexOf(self.crearordenTab), _translate("MainWindow", "Crear"))
         self.pushButton_3.setText(_translate("MainWindow", "Eliminar orden"))
         self.label.setText(_translate("MainWindow", "Producto"))
@@ -586,8 +594,8 @@ class Ui_MainWindow(object):
         self.pushButton_6.setText(_translate("MainWindow", "Eliminar item"))
         self.tabs.setTabText(self.tabs.indexOf(self.ordenesTab), _translate("MainWindow", "Ordenes"))
         self.label_4.setText(_translate("MainWindow", "Ingredientes"))
-        self.label_10.setText(_translate("MainWindow", "Seleccionado"))
-        self.guardarcambios.setText(_translate("MainWindow", "Guardar cambios"))
+        self.inv_seleccionado_label.setText(_translate("MainWindow", "Seleccionado"))
+        self.inv_guardar_cambios_btn.setText(_translate("MainWindow", "Guardar cambios"))
         self.label_5.setText(_translate("MainWindow", "Nombre"))
         self.label_6.setText(_translate("MainWindow", "Cantidad disponible"))
         self.label_11.setText(_translate("MainWindow", "Fecha de caducidad"))
