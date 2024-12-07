@@ -23,7 +23,7 @@
 }</string>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
+    <item row="0" column="1">
      <widget class="QTabWidget" name="tabs">
       <property name="cursor">
        <cursorShape>ArrowCursor</cursorShape>
@@ -57,13 +57,13 @@ QTabBar::tab:hover {
        <attribute name="title">
         <string>Crear</string>
        </attribute>
-       <widget class="QPushButton" name="crear_createorder_button">
+       <widget class="QPushButton" name="crear_orden_crear_orden_button">
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>320</y>
-          <width>371</width>
-          <height>61</height>
+          <y>390</y>
+          <width>361</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="font">
@@ -74,7 +74,7 @@ QTabBar::tab:hover {
          </font>
         </property>
         <property name="cursor">
-         <cursorShape>OpenHandCursor</cursorShape>
+         <cursorShape>PointingHandCursor</cursorShape>
         </property>
         <property name="layoutDirection">
          <enum>Qt::RightToLeft</enum>
@@ -96,7 +96,6 @@ QTabBar::tab:hover {
 QPushButton:hover {
 	background-color: white;
 	color: black;
-    cursor: pointer;
 }
 
 
@@ -110,13 +109,13 @@ QPushButton:hover {
          <number>300</number>
         </property>
        </widget>
-       <widget class="QLabel" name="crear_totalprice_button">
+       <widget class="QLabel" name="crear_orden_totalprice_label">
         <property name="geometry">
          <rect>
           <x>420</x>
-          <y>390</y>
-          <width>371</width>
-          <height>81</height>
+          <y>430</y>
+          <width>361</width>
+          <height>41</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -259,7 +258,7 @@ QListView {
          </item>
         </layout>
        </widget>
-       <widget class="QTableWidget" name="crear_orderList_tableWidget">
+       <widget class="QTableWidget" name="crear_orden_orderList_tableWidget">
         <property name="geometry">
          <rect>
           <x>420</x>
@@ -317,6 +316,34 @@ QGroupBox:title {
          </property>
         </widget>
        </widget>
+       <widget class="QWidget" name="horizontalLayoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>320</y>
+          <width>361</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="label_10">
+           <property name="text">
+            <string>Nombre de la orden:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="crear_orden_nombre_orden_lineEdit">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+	background-color: white;
+}</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </widget>
       <widget class="QWidget" name="ordenesTab">
        <attribute name="title">
@@ -351,22 +378,21 @@ QGroupBox:title {
             </property>
             <layout class="QVBoxLayout" name="verticalLayout">
              <item>
-              <widget class="QTreeView" name="treeView">
+              <widget class="QListWidget" name="order_orders_listWidget">
                <property name="styleSheet">
-                <string notr="true">QTreeView{
+                <string notr="true">QListView{
 	background-color: white;
 }
-
 </string>
                </property>
-               <attribute name="headerMinimumSectionSize">
-                <number>39</number>
-               </attribute>
+               <property name="selectionMode">
+                <enum>QAbstractItemView::ExtendedSelection</enum>
+               </property>
               </widget>
              </item>
             </layout>
            </widget>
-           <widget class="QPushButton" name="pushButton_3">
+           <widget class="QPushButton" name="order_delete_order_button">
             <property name="geometry">
              <rect>
               <x>10</x>
@@ -383,7 +409,7 @@ QGroupBox:title {
              </font>
             </property>
             <property name="cursor">
-             <cursorShape>OpenHandCursor</cursorShape>
+             <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="layoutDirection">
              <enum>Qt::RightToLeft</enum>
@@ -482,7 +508,7 @@ QPushButton:hover {
              <string>Total</string>
             </property>
            </widget>
-           <widget class="QLabel" name="label_7">
+           <widget class="QLabel" name="order_total_label">
             <property name="geometry">
              <rect>
               <x>310</x>
@@ -508,12 +534,12 @@ QPushButton:hover {
              <set>Qt::AlignCenter</set>
             </property>
            </widget>
-           <widget class="QLabel" name="label_8">
+           <widget class="QLabel" name="order_description_label">
             <property name="geometry">
              <rect>
-              <x>540</x>
+              <x>430</x>
               <y>340</y>
-              <width>241</width>
+              <width>351</width>
               <height>51</height>
              </rect>
             </property>
@@ -534,39 +560,7 @@ QPushButton:hover {
              <set>Qt::AlignCenter</set>
             </property>
            </widget>
-           <widget class="QLabel" name="label_9">
-            <property name="geometry">
-             <rect>
-              <x>430</x>
-              <y>340</y>
-              <width>101</width>
-              <height>51</height>
-             </rect>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QLabel{	
-	color: black;
-	font-family: Arial;
-	font-size: 18px;
-	font-weight: bold;
-	background-color: orange;
-	border-radius: 10px;
-}</string>
-            </property>
-            <property name="text">
-             <string>Imagen del producto</string>
-            </property>
-            <property name="textFormat">
-             <enum>Qt::AutoText</enum>
-            </property>
-            <property name="scaledContents">
-             <bool>false</bool>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-           <widget class="QTextEdit" name="textEdit">
+           <widget class="QTextEdit" name="order_serach_order_textEdit">
             <property name="geometry">
              <rect>
               <x>0</x>
@@ -583,7 +577,7 @@ QPushButton:hover {
 }</string>
             </property>
            </widget>
-           <widget class="QListView" name="listView">
+           <widget class="QListWidget" name="order_order_entries_listWidget">
             <property name="geometry">
              <rect>
               <x>430</x>
@@ -598,7 +592,7 @@ QPushButton:hover {
 }</string>
             </property>
            </widget>
-           <widget class="QPushButton" name="pushButton_6">
+           <widget class="QPushButton" name="order_delete_order_entry_button">
             <property name="geometry">
              <rect>
               <x>530</x>
@@ -615,7 +609,7 @@ QPushButton:hover {
              </font>
             </property>
             <property name="cursor">
-             <cursorShape>OpenHandCursor</cursorShape>
+             <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="layoutDirection">
              <enum>Qt::RightToLeft</enum>
@@ -660,32 +654,20 @@ QPushButton:hover {
        <attribute name="title">
         <string>Reportes</string>
        </attribute>
-       <widget class="QWidget" name="gridLayoutWidget">
+       <widget class="QCalendarWidget" name="reportes_calendario">
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>0</y>
+          <y>20</y>
           <width>801</width>
-          <height>491</height>
+          <height>271</height>
          </rect>
         </property>
-        <layout class="QGridLayout" name="gridLayout_2">
-         <item row="1" column="0">
-          <widget class="QListView" name="listView_3">
-           <property name="styleSheet">
-            <string notr="true">QListView{
-	background-color: white;
-}</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0">
-          <widget class="QCalendarWidget" name="calendarWidget">
-           <property name="autoFillBackground">
-            <bool>false</bool>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QCalendarWidget {
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QCalendarWidget {
                 background-color: #333333;
                 color: black;
                 font-family: Arial;
@@ -722,16 +704,25 @@ QCalendarWidget QAbstractItemView:enabled {
                 background-color: #555555;
                 color: #777777;
             }</string>
-           </property>
-           <property name="gridVisible">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QPushButton" name="pushButton">
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
+        </property>
+        <property name="gridVisible">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="reportes_mostrar_info">
+        <property name="geometry">
+         <rect>
+          <x>630</x>
+          <y>430</y>
+          <width>161</width>
+          <height>54</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
 	font-family: Arial;
 	font-size: 18px;
 	font-weight: bold;
@@ -750,13 +741,44 @@ QPushButton:hover {
     cursor: pointer;
 }
 </string>
-           </property>
-           <property name="text">
-            <string>Seleccionar</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        </property>
+        <property name="text">
+         <string>Seleccionar</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="reportes_img">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>300</y>
+          <width>481</width>
+          <height>181</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../imagenes/iconoGaleria.jpeg</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="reportes_combobox">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>300</y>
+          <width>131</width>
+          <height>181</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>ventas</string>
+         </property>
+        </item>
        </widget>
       </widget>
       <widget class="QWidget" name="inventarioTab">
@@ -995,6 +1017,9 @@ QGroupBox * {
             </item>
             <item row="5" column="0">
              <widget class="QPushButton" name="inv_elegir_imagen_button">
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
               <property name="styleSheet">
                <string notr="true">QPushButton{
 	background-color: pink;
@@ -1031,6 +1056,9 @@ QGroupBox * {
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
+              </property>
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
                <string notr="true">QPushButton{
@@ -1135,6 +1163,9 @@ QGroupBox * {
            <width>241</width>
            <height>31</height>
           </rect>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="styleSheet">
           <string notr="true">color: black;
@@ -1303,6 +1334,9 @@ font-size: 15px;</string>
            <width>401</width>
            <height>71</height>
           </rect>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="styleSheet">
           <string notr="true">color: black;

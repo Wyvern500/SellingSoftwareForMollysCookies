@@ -46,16 +46,16 @@ class Ui_MainWindow(object):
         self.tabs.setObjectName("tabs")
         self.crearordenTab = QtWidgets.QWidget()
         self.crearordenTab.setObjectName("crearordenTab")
-        self.crear_createorder_button = QtWidgets.QPushButton(parent=self.crearordenTab)
-        self.crear_createorder_button.setGeometry(QtCore.QRect(420, 320, 371, 61))
+        self.crear_orden_crear_orden_button = QtWidgets.QPushButton(parent=self.crearordenTab)
+        self.crear_orden_crear_orden_button.setGeometry(QtCore.QRect(420, 390, 361, 31))
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(12)
         font.setBold(True)
-        self.crear_createorder_button.setFont(font)
-        self.crear_createorder_button.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.OpenHandCursor))
-        self.crear_createorder_button.setLayoutDirection(QtCore.Qt.LayoutDirection.RightToLeft)
-        self.crear_createorder_button.setStyleSheet("QPushButton {\n"
+        self.crear_orden_crear_orden_button.setFont(font)
+        self.crear_orden_crear_orden_button.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.crear_orden_crear_orden_button.setLayoutDirection(QtCore.Qt.LayoutDirection.RightToLeft)
+        self.crear_orden_crear_orden_button.setStyleSheet("QPushButton {\n"
 "    font-family: Arial;\n"
 "    font-size: 12;\n"
 "    font-weight: bold;\n"
@@ -71,17 +71,16 @@ class Ui_MainWindow(object):
 "QPushButton:hover {\n"
 "    background-color: white;\n"
 "    color: black;\n"
-"    cursor: pointer;\n"
 "}\n"
 "\n"
 "\n"
 "\n"
 "")
-        self.crear_createorder_button.setAutoRepeatDelay(300)
-        self.crear_createorder_button.setObjectName("crear_createorder_button")
-        self.crear_totalprice_button = QtWidgets.QLabel(parent=self.crearordenTab)
-        self.crear_totalprice_button.setGeometry(QtCore.QRect(420, 390, 371, 81))
-        self.crear_totalprice_button.setStyleSheet("QLabel{    \n"
+        self.crear_orden_crear_orden_button.setAutoRepeatDelay(300)
+        self.crear_orden_crear_orden_button.setObjectName("crear_orden_crear_orden_button")
+        self.crear_orden_totalprice_label = QtWidgets.QLabel(parent=self.crearordenTab)
+        self.crear_orden_totalprice_label.setGeometry(QtCore.QRect(420, 430, 361, 41))
+        self.crear_orden_totalprice_label.setStyleSheet("QLabel{    \n"
 "    color: black;\n"
 "    font-family: Arial;\n"
 "    font-size: 18px;\n"
@@ -89,8 +88,8 @@ class Ui_MainWindow(object):
 "    background-color: orange;\n"
 "    border-radius: 10px;\n"
 "}")
-        self.crear_totalprice_button.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.crear_totalprice_button.setObjectName("crear_totalprice_button")
+        self.crear_orden_totalprice_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.crear_orden_totalprice_label.setObjectName("crear_orden_totalprice_label")
         self.searchbar = QtWidgets.QTextEdit(parent=self.crearordenTab)
         self.searchbar.setGeometry(QtCore.QRect(0, 10, 401, 41))
         self.searchbar.setStyleSheet("QTextEdit{\n"
@@ -160,12 +159,12 @@ class Ui_MainWindow(object):
 "")
         self.crear_items_listWidget.setObjectName("crear_items_listWidget")
         self.horizontalLayout_3.addWidget(self.crear_items_listWidget)
-        self.crear_orderList_tableWidget = QtWidgets.QTableWidget(parent=self.crearordenTab)
-        self.crear_orderList_tableWidget.setGeometry(QtCore.QRect(420, 60, 361, 251))
-        self.crear_orderList_tableWidget.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.crear_orderList_tableWidget.setObjectName("crear_orderList_tableWidget")
-        self.crear_orderList_tableWidget.setColumnCount(0)
-        self.crear_orderList_tableWidget.setRowCount(0)
+        self.crear_orden_orderList_tableWidget = QtWidgets.QTableWidget(parent=self.crearordenTab)
+        self.crear_orden_orderList_tableWidget.setGeometry(QtCore.QRect(420, 60, 361, 251))
+        self.crear_orden_orderList_tableWidget.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.crear_orden_orderList_tableWidget.setObjectName("crear_orden_orderList_tableWidget")
+        self.crear_orden_orderList_tableWidget.setColumnCount(0)
+        self.crear_orden_orderList_tableWidget.setRowCount(0)
         self.groupBox = QtWidgets.QGroupBox(parent=self.crearordenTab)
         self.groupBox.setGeometry(QtCore.QRect(10, 380, 391, 101))
         self.groupBox.setStyleSheet("QGroupBox {\n"
@@ -185,6 +184,21 @@ class Ui_MainWindow(object):
         self.crear_description_textEdit.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.crear_description_textEdit.setReadOnly(True)
         self.crear_description_textEdit.setObjectName("crear_description_textEdit")
+        self.horizontalLayoutWidget_2 = QtWidgets.QWidget(parent=self.crearordenTab)
+        self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(420, 320, 361, 61))
+        self.horizontalLayoutWidget_2.setObjectName("horizontalLayoutWidget_2")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_2)
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.label_10 = QtWidgets.QLabel(parent=self.horizontalLayoutWidget_2)
+        self.label_10.setObjectName("label_10")
+        self.horizontalLayout_2.addWidget(self.label_10)
+        self.crear_orden_nombre_orden_lineEdit = QtWidgets.QLineEdit(parent=self.horizontalLayoutWidget_2)
+        self.crear_orden_nombre_orden_lineEdit.setStyleSheet("QLineEdit {\n"
+"    background-color: white;\n"
+"}")
+        self.crear_orden_nombre_orden_lineEdit.setObjectName("crear_orden_nombre_orden_lineEdit")
+        self.horizontalLayout_2.addWidget(self.crear_orden_nombre_orden_lineEdit)
         self.tabs.addTab(self.crearordenTab, "")
         self.ordenesTab = QtWidgets.QWidget()
         self.ordenesTab.setObjectName("ordenesTab")
@@ -204,25 +218,24 @@ class Ui_MainWindow(object):
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.treeView = QtWidgets.QTreeView(parent=self.verticalLayoutWidget)
-        self.treeView.setStyleSheet("QTreeView{\n"
+        self.order_orders_listWidget = QtWidgets.QListWidget(parent=self.verticalLayoutWidget)
+        self.order_orders_listWidget.setStyleSheet("QListView{\n"
 "    background-color: white;\n"
 "}\n"
-"\n"
 "")
-        self.treeView.setObjectName("treeView")
-        self.treeView.header().setMinimumSectionSize(39)
-        self.verticalLayout.addWidget(self.treeView)
-        self.pushButton_3 = QtWidgets.QPushButton(parent=self.widget)
-        self.pushButton_3.setGeometry(QtCore.QRect(10, 410, 291, 61))
+        self.order_orders_listWidget.setSelectionMode(QtWidgets.QAbstractItemView.SelectionMode.ExtendedSelection)
+        self.order_orders_listWidget.setObjectName("order_orders_listWidget")
+        self.verticalLayout.addWidget(self.order_orders_listWidget)
+        self.order_delete_order_button = QtWidgets.QPushButton(parent=self.widget)
+        self.order_delete_order_button.setGeometry(QtCore.QRect(10, 410, 291, 61))
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(12)
         font.setBold(True)
-        self.pushButton_3.setFont(font)
-        self.pushButton_3.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.OpenHandCursor))
-        self.pushButton_3.setLayoutDirection(QtCore.Qt.LayoutDirection.RightToLeft)
-        self.pushButton_3.setStyleSheet("QPushButton {\n"
+        self.order_delete_order_button.setFont(font)
+        self.order_delete_order_button.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.order_delete_order_button.setLayoutDirection(QtCore.Qt.LayoutDirection.RightToLeft)
+        self.order_delete_order_button.setStyleSheet("QPushButton {\n"
 "    font-family: Arial;\n"
 "    font-size: 12;\n"
 "    font-weight: bold;\n"
@@ -244,8 +257,8 @@ class Ui_MainWindow(object):
 "\n"
 "\n"
 "")
-        self.pushButton_3.setAutoRepeatDelay(300)
-        self.pushButton_3.setObjectName("pushButton_3")
+        self.order_delete_order_button.setAutoRepeatDelay(300)
+        self.order_delete_order_button.setObjectName("order_delete_order_button")
         self.label = QtWidgets.QLabel(parent=self.widget)
         self.label.setGeometry(QtCore.QRect(430, 50, 91, 21))
         self.label.setStyleSheet("QLabel{    \n"
@@ -273,9 +286,9 @@ class Ui_MainWindow(object):
 "    font-weight: bold;\n"
 "}")
         self.label_3.setObjectName("label_3")
-        self.label_7 = QtWidgets.QLabel(parent=self.widget)
-        self.label_7.setGeometry(QtCore.QRect(310, 410, 211, 61))
-        self.label_7.setStyleSheet("QLabel{    \n"
+        self.order_total_label = QtWidgets.QLabel(parent=self.widget)
+        self.order_total_label.setGeometry(QtCore.QRect(310, 410, 211, 61))
+        self.order_total_label.setStyleSheet("QLabel{    \n"
 "    color: black;\n"
 "    font-family: Arial;\n"
 "    font-size: 18px;\n"
@@ -283,11 +296,11 @@ class Ui_MainWindow(object):
 "    background-color: orange;\n"
 "    border-radius: 10px;\n"
 "}")
-        self.label_7.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_7.setObjectName("label_7")
-        self.label_8 = QtWidgets.QLabel(parent=self.widget)
-        self.label_8.setGeometry(QtCore.QRect(540, 340, 241, 51))
-        self.label_8.setStyleSheet("QLabel{    \n"
+        self.order_total_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.order_total_label.setObjectName("order_total_label")
+        self.order_description_label = QtWidgets.QLabel(parent=self.widget)
+        self.order_description_label.setGeometry(QtCore.QRect(430, 340, 351, 51))
+        self.order_description_label.setStyleSheet("QLabel{    \n"
 "    color: black;\n"
 "    font-family: Arial;\n"
 "    font-size: 18px;\n"
@@ -295,46 +308,32 @@ class Ui_MainWindow(object):
 "    background-color: orange;\n"
 "    border-radius: 10px;\n"
 "}")
-        self.label_8.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_8.setObjectName("label_8")
-        self.label_9 = QtWidgets.QLabel(parent=self.widget)
-        self.label_9.setGeometry(QtCore.QRect(430, 340, 101, 51))
-        self.label_9.setStyleSheet("QLabel{    \n"
-"    color: black;\n"
-"    font-family: Arial;\n"
-"    font-size: 18px;\n"
-"    font-weight: bold;\n"
-"    background-color: orange;\n"
-"    border-radius: 10px;\n"
-"}")
-        self.label_9.setTextFormat(QtCore.Qt.TextFormat.AutoText)
-        self.label_9.setScaledContents(False)
-        self.label_9.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_9.setObjectName("label_9")
-        self.textEdit = QtWidgets.QTextEdit(parent=self.widget)
-        self.textEdit.setGeometry(QtCore.QRect(0, 0, 401, 41))
-        self.textEdit.setStyleSheet("QTextEdit{\n"
+        self.order_description_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.order_description_label.setObjectName("order_description_label")
+        self.order_serach_order_textEdit = QtWidgets.QTextEdit(parent=self.widget)
+        self.order_serach_order_textEdit.setGeometry(QtCore.QRect(0, 0, 401, 41))
+        self.order_serach_order_textEdit.setStyleSheet("QTextEdit{\n"
 "    background-color: white;\n"
 "    font-family: Arial;\n"
 "    font-size: 18px;\n"
 "}")
-        self.textEdit.setObjectName("textEdit")
-        self.listView = QtWidgets.QListView(parent=self.widget)
-        self.listView.setGeometry(QtCore.QRect(430, 80, 351, 241))
-        self.listView.setStyleSheet("QListView{\n"
+        self.order_serach_order_textEdit.setObjectName("order_serach_order_textEdit")
+        self.order_order_entries_listWidget = QtWidgets.QListWidget(parent=self.widget)
+        self.order_order_entries_listWidget.setGeometry(QtCore.QRect(430, 80, 351, 241))
+        self.order_order_entries_listWidget.setStyleSheet("QListView{\n"
 "    background-color: white;\n"
 "}")
-        self.listView.setObjectName("listView")
-        self.pushButton_6 = QtWidgets.QPushButton(parent=self.widget)
-        self.pushButton_6.setGeometry(QtCore.QRect(530, 410, 251, 61))
+        self.order_order_entries_listWidget.setObjectName("order_order_entries_listWidget")
+        self.order_delete_order_entry_button = QtWidgets.QPushButton(parent=self.widget)
+        self.order_delete_order_entry_button.setGeometry(QtCore.QRect(530, 410, 251, 61))
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(12)
         font.setBold(True)
-        self.pushButton_6.setFont(font)
-        self.pushButton_6.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.OpenHandCursor))
-        self.pushButton_6.setLayoutDirection(QtCore.Qt.LayoutDirection.RightToLeft)
-        self.pushButton_6.setStyleSheet("QPushButton {\n"
+        self.order_delete_order_entry_button.setFont(font)
+        self.order_delete_order_entry_button.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.order_delete_order_entry_button.setLayoutDirection(QtCore.Qt.LayoutDirection.RightToLeft)
+        self.order_delete_order_entry_button.setStyleSheet("QPushButton {\n"
 "    font-family: Arial;\n"
 "    font-size: 12;\n"
 "    font-weight: bold;\n"
@@ -356,27 +355,16 @@ class Ui_MainWindow(object):
 "\n"
 "\n"
 "")
-        self.pushButton_6.setAutoRepeatDelay(300)
-        self.pushButton_6.setObjectName("pushButton_6")
+        self.order_delete_order_entry_button.setAutoRepeatDelay(300)
+        self.order_delete_order_entry_button.setObjectName("order_delete_order_entry_button")
         self.horizontalLayout.addWidget(self.widget)
         self.tabs.addTab(self.ordenesTab, "")
         self.reportesTab = QtWidgets.QWidget()
         self.reportesTab.setObjectName("reportesTab")
-        self.gridLayoutWidget = QtWidgets.QWidget(parent=self.reportesTab)
-        self.gridLayoutWidget.setGeometry(QtCore.QRect(0, 0, 801, 491))
-        self.gridLayoutWidget.setObjectName("gridLayoutWidget")
-        self.gridLayout_2 = QtWidgets.QGridLayout(self.gridLayoutWidget)
-        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.gridLayout_2.setObjectName("gridLayout_2")
-        self.listView_3 = QtWidgets.QListView(parent=self.gridLayoutWidget)
-        self.listView_3.setStyleSheet("QListView{\n"
-"    background-color: white;\n"
-"}")
-        self.listView_3.setObjectName("listView_3")
-        self.gridLayout_2.addWidget(self.listView_3, 1, 0, 1, 1)
-        self.calendarWidget = QtWidgets.QCalendarWidget(parent=self.gridLayoutWidget)
-        self.calendarWidget.setAutoFillBackground(False)
-        self.calendarWidget.setStyleSheet("QCalendarWidget {\n"
+        self.reportes_calendario = QtWidgets.QCalendarWidget(parent=self.reportesTab)
+        self.reportes_calendario.setGeometry(QtCore.QRect(0, 20, 801, 271))
+        self.reportes_calendario.setAutoFillBackground(False)
+        self.reportes_calendario.setStyleSheet("QCalendarWidget {\n"
 "                background-color: #333333;\n"
 "                color: black;\n"
 "                font-family: Arial;\n"
@@ -413,11 +401,12 @@ class Ui_MainWindow(object):
 "                background-color: #555555;\n"
 "                color: #777777;\n"
 "            }")
-        self.calendarWidget.setGridVisible(True)
-        self.calendarWidget.setObjectName("calendarWidget")
-        self.gridLayout_2.addWidget(self.calendarWidget, 0, 0, 1, 1)
-        self.pushButton = QtWidgets.QPushButton(parent=self.gridLayoutWidget)
-        self.pushButton.setStyleSheet("QPushButton {\n"
+        self.reportes_calendario.setGridVisible(True)
+        self.reportes_calendario.setObjectName("reportes_calendario")
+        self.reportes_mostrar_info = QtWidgets.QPushButton(parent=self.reportesTab)
+        self.reportes_mostrar_info.setGeometry(QtCore.QRect(630, 430, 161, 54))
+        self.reportes_mostrar_info.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.reportes_mostrar_info.setStyleSheet("QPushButton {\n"
 "    font-family: Arial;\n"
 "    font-size: 18px;\n"
 "    font-weight: bold;\n"
@@ -436,8 +425,17 @@ class Ui_MainWindow(object):
 "    cursor: pointer;\n"
 "}\n"
 "")
-        self.pushButton.setObjectName("pushButton")
-        self.gridLayout_2.addWidget(self.pushButton, 2, 0, 1, 1)
+        self.reportes_mostrar_info.setObjectName("reportes_mostrar_info")
+        self.reportes_img = QtWidgets.QLabel(parent=self.reportesTab)
+        self.reportes_img.setGeometry(QtCore.QRect(140, 300, 481, 181))
+        self.reportes_img.setText("")
+        self.reportes_img.setPixmap(QtGui.QPixmap("ui\\../imagenes/iconoGaleria.jpeg"))
+        self.reportes_img.setScaledContents(True)
+        self.reportes_img.setObjectName("reportes_img")
+        self.reportes_combobox = QtWidgets.QComboBox(parent=self.reportesTab)
+        self.reportes_combobox.setGeometry(QtCore.QRect(0, 300, 131, 181))
+        self.reportes_combobox.setObjectName("reportes_combobox")
+        self.reportes_combobox.addItem("")
         self.tabs.addTab(self.reportesTab, "")
         self.inventarioTab = QtWidgets.QWidget()
         self.inventarioTab.setObjectName("inventarioTab")
@@ -571,6 +569,7 @@ class Ui_MainWindow(object):
         self.inv_tipo_producto_combo_box.addItem("")
         self.formLayout.setWidget(4, QtWidgets.QFormLayout.ItemRole.FieldRole, self.inv_tipo_producto_combo_box)
         self.inv_elegir_imagen_button = QtWidgets.QPushButton(parent=self.verticalLayoutWidget_2)
+        self.inv_elegir_imagen_button.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.inv_elegir_imagen_button.setStyleSheet("QPushButton{\n"
 "    background-color: pink;\n"
 "}")
@@ -589,6 +588,7 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.inv_crear_ingrediente.sizePolicy().hasHeightForWidth())
         self.inv_crear_ingrediente.setSizePolicy(sizePolicy)
+        self.inv_crear_ingrediente.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.inv_crear_ingrediente.setStyleSheet("QPushButton{\n"
 "    background-color: pink;\n"
 "}")
@@ -629,6 +629,7 @@ class Ui_MainWindow(object):
         self.add_labelDropImage.setObjectName("add_labelDropImage")
         self.add_searchImageButton = QtWidgets.QPushButton(parent=self.groupBox_2)
         self.add_searchImageButton.setGeometry(QtCore.QRect(10, 170, 241, 31))
+        self.add_searchImageButton.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.add_searchImageButton.setStyleSheet("color: black;\n"
 "font-family: Segoe UI;\n"
 "font-size: 14px;\n"
@@ -692,6 +693,7 @@ class Ui_MainWindow(object):
         self.add_lineEditPrice.setObjectName("add_lineEditPrice")
         self.add_saveChangesButton = QtWidgets.QPushButton(parent=self.groupBox_3)
         self.add_saveChangesButton.setGeometry(QtCore.QRect(10, 370, 401, 71))
+        self.add_saveChangesButton.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.add_saveChangesButton.setStyleSheet("color: black;\n"
 "font-family: Segoe UI;\n"
 "font-size: 16px;\n"
@@ -700,7 +702,7 @@ class Ui_MainWindow(object):
 "border-radius: 8px")
         self.add_saveChangesButton.setObjectName("add_saveChangesButton")
         self.tabs.addTab(self.agregarproductoTab, "")
-        self.gridLayout.addWidget(self.tabs, 0, 0, 1, 1)
+        self.gridLayout.addWidget(self.tabs, 0, 1, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 820, 22))
@@ -720,30 +722,31 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuInventario.menuAction())
 
         self.retranslateUi(MainWindow)
-        self.tabs.setCurrentIndex(3)
+        self.tabs.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "SellingSoftwareForMollysCookies"))
-        self.crear_createorder_button.setText(_translate("MainWindow", "Crear orden"))
-        self.crear_totalprice_button.setText(_translate("MainWindow", "Precio total"))
+        self.crear_orden_crear_orden_button.setText(_translate("MainWindow", "Crear orden"))
+        self.crear_orden_totalprice_label.setText(_translate("MainWindow", "Precio total"))
         self.product_label.setText(_translate("MainWindow", "Producto"))
         self.quantity_label.setText(_translate("MainWindow", "Cantidad"))
         self.total_label.setText(_translate("MainWindow", "Subtotal"))
         self.groupBox.setTitle(_translate("MainWindow", "Características"))
         self.crear_description_textEdit.setPlaceholderText(_translate("MainWindow", "Caracteristicas del producto"))
+        self.label_10.setText(_translate("MainWindow", "Nombre de la orden:"))
         self.tabs.setTabText(self.tabs.indexOf(self.crearordenTab), _translate("MainWindow", "Crear"))
-        self.pushButton_3.setText(_translate("MainWindow", "Eliminar orden"))
+        self.order_delete_order_button.setText(_translate("MainWindow", "Eliminar orden"))
         self.label.setText(_translate("MainWindow", "Producto"))
         self.label_2.setText(_translate("MainWindow", "Cantidad"))
         self.label_3.setText(_translate("MainWindow", "Total"))
-        self.label_7.setText(_translate("MainWindow", "Total a pagar"))
-        self.label_8.setText(_translate("MainWindow", "Caracteristicas"))
-        self.label_9.setText(_translate("MainWindow", "Imagen del producto"))
-        self.pushButton_6.setText(_translate("MainWindow", "Eliminar item"))
+        self.order_total_label.setText(_translate("MainWindow", "Total a pagar"))
+        self.order_description_label.setText(_translate("MainWindow", "Caracteristicas"))
+        self.order_delete_order_entry_button.setText(_translate("MainWindow", "Eliminar item"))
         self.tabs.setTabText(self.tabs.indexOf(self.ordenesTab), _translate("MainWindow", "Ordenes"))
-        self.pushButton.setText(_translate("MainWindow", "Seleccionar"))
+        self.reportes_mostrar_info.setText(_translate("MainWindow", "Seleccionar"))
+        self.reportes_combobox.setItemText(0, _translate("MainWindow", "ventas"))
         self.tabs.setTabText(self.tabs.indexOf(self.reportesTab), _translate("MainWindow", "Reportes"))
         self.label_4.setText(_translate("MainWindow", "Ingredientes"))
         self.groupBox_5.setTitle(_translate("MainWindow", "Atributos del ingrediente"))

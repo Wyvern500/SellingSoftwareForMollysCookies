@@ -1,8 +1,6 @@
-from PyQt6.QtCore import Qt, QMimeData
-from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QSpinBox, QHBoxLayout, QListWidgetItem, QTableWidget, QTableWidgetItem, QFileDialog, QPushButton
+from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import QListWidgetItem, QFileDialog, QWidget, QLabel, QHBoxLayout, QVBoxLayout
 
-from Product.create_order_manager import CustomWidget
-from gui import Ui_MainWindow
 from PyQt6.QtGui import QPixmap, QDragEnterEvent, QDropEvent
 
 
@@ -11,8 +9,6 @@ class AddProductManager:
     def __init__(self, parent):
         from window import Window
         self.parent: Window = parent
-
-        self.load_items_from_database()
 
         self.parent.add_searchImageButton.clicked.connect(self.open_image)
 
@@ -78,11 +74,16 @@ class AddProductManager:
         item = QListWidgetItem(self.parent.crear_items_listWidget)
 
         # Crear un widget personalizado para el producto
-        custom_widget = CustomWidget(self.image_path, product_name, float(product_price), product_description)
+        product = Product(product_name, float(product_price), product_description,
+                          self.image_path)
+        custom_widget = ProductItemWidget(product)
         item.setSizeHint(custom_widget.sizeHint())
 
         # Agregar el widget personalizado al QListWidget
         self.parent.crear_items_listWidget.setItemWidget(item, custom_widget)
+
+        # Agregar el producto a la base de datos
+        self.parent.database_manager.insert_data("product", product.serialize())
 
         # Resetear los campos
         self.parent.add_lineEditProductName.clear()
@@ -92,8 +93,76 @@ class AddProductManager:
         print("Producto guardado y agregado a la lista.")
 
 
-    def load_items_from_database(self):
-        pass
+def deserialize(data):
+    if type(data) is dict:
+        return Product(data["name"], data["price"], data["description"], data["image_path"])
+    elif type(data) is tuple:
+        return Product(data[1], data[2], data[3], data[4])
 
 
+class Product:
 
+    def __init__(self, name: str, price: float, description: str, image_path: str):
+        self.name = name
+        self.price = price
+        self.description = description
+        self.image_path = image_path
+
+    def serialize(self):
+        return {"name": self.name, "price": self.price, "description": self.description
+            , "image_path": self.image_path}
+
+
+class ProductItemWidget(QWidget):
+    def __init__(self, product: Product, parent=None):
+        super().__init__(parent)
+
+        self.product: Product = product
+
+        # Crear QLabel para la imagen
+        self.image_label = QLabel()
+        pixmap = QPixmap(product.image_path)
+
+        if pixmap.isNull():
+            print(f"Error: No se pudo cargar la imagen desde {product.image_path}")
+        else:
+            # Escalar la imagen a un tamaño fijo (por ejemplo, 50x50)
+            self.image_label.setPixmap(pixmap.scaled(50, 50))
+
+        self.image_label.setFixedSize(50, 50)  # Fija el tamaño para evitar deformaciones
+
+        # Crear QLabel para el nombre del producto
+        self.name_label = QLabel(product.name)
+        self.name_label.setStyleSheet("background-color: transparent; color: black; font-weight: bold;")
+
+        # Crear QLabel para el precio del producto
+        self.price_label = QLabel(f"${product.price:.2f}")
+        self.price_label.setStyleSheet("background-color: transparent; color: black; font-weight: bold;")
+
+        # Configurar el layout horizontal para imagen, nombre y precio
+        layout = QHBoxLayout()
+        layout.addWidget(self.image_label)
+        layout.addWidget(self.name_label)
+        layout.addWidget(self.price_label)
+
+        # Crear un contenedor para los elementos con borde
+        card_container = QWidget()
+        card_container.setLayout(layout)
+
+        # Estilo del contenedor para crear una "tarjeta" con bordes y márgenes
+        card_container.setStyleSheet("""
+            QWidget {
+                border: 1px solid #black;
+                border-radius: 10px;
+                padding: 1px;
+                margin: 1px;
+                background-color: #f9f9f9;
+            }
+        """)
+
+        # Crear un layout vertical para contener la tarjeta (esto puede ser útil si deseas más control)
+        main_layout = QVBoxLayout()
+        main_layout.addWidget(card_container)
+
+        # Asignar el layout principal al widget
+        self.setLayout(main_layout)
