@@ -9,4 +9,3 @@ if __name__ == "__main__":
     win = Window()  # Instanciamos la ventana principal
     win.show()  # Mostramos la ventana
     sys.exit(app.exec())  # Ejecutamos la aplicación
-

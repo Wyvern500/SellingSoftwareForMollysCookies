@@ -46,14 +46,14 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`order`
+-- Table `mydb`.`products_order`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`order` (
-  `idorder` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `mydb`.`products_order` (
+  `idproducts_order` INT NOT NULL,
   `name` VARCHAR(45) NULL,
   `total` FLOAT NOT NULL,
   `date` DATETIME NULL,
-  PRIMARY KEY (`idorder`))
+  PRIMARY KEY (`idproducts_order`))
 ENGINE = InnoDB;
 
 
@@ -80,47 +80,47 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`product_has_order`
+-- Table `mydb`.`product_has_products_order`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`product_has_order` (
+CREATE TABLE IF NOT EXISTS `mydb`.`product_has_products_order` (
   `product_idproduct` INT NOT NULL,
-  `order_idorder` INT NOT NULL,
-  PRIMARY KEY (`product_idproduct`, `order_idorder`),
-  INDEX `fk_product_has_order_order1_idx` (`order_idorder` ASC) VISIBLE,
-  INDEX `fk_product_has_order_product1_idx` (`product_idproduct` ASC) VISIBLE,
-  CONSTRAINT `fk_product_has_order_product1`
+  `products_order_idproducts_order` INT NOT NULL,
+  PRIMARY KEY (`product_idproduct`, `products_order_idproducts_order`),
+  INDEX `fk_product_has_products_order_products_order1_idx` (`products_order_idproducts_order` ASC) VISIBLE,
+  INDEX `fk_product_has_products_order_product1_idx` (`product_idproduct` ASC) VISIBLE,
+  CONSTRAINT `fk_product_has_products_order_product1`
     FOREIGN KEY (`product_idproduct`)
     REFERENCES `mydb`.`product` (`idproduct`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_product_has_order_order1`
-    FOREIGN KEY (`order_idorder`)
-    REFERENCES `mydb`.`order` (`idorder`)
+  CONSTRAINT `fk_product_has_products_order_products_order1`
+    FOREIGN KEY (`products_order_idproducts_order`)
+    REFERENCES `mydb`.`products_order` (`idproducts_order`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`order_entry_wraper`
+-- Table `mydb`.`products_order_entry_wraper`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`order_entry_wraper` (
-  `idorder_product_wraper` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `mydb`.`products_order_entry_wraper` (
+  `idproducts_order_product_wraper` INT NOT NULL AUTO_INCREMENT,
   `amount` INT NULL,
   `subtotal` FLOAT NULL,
   `product_idproduct` INT NOT NULL,
-  `order_idorder` INT NOT NULL,
-  PRIMARY KEY (`idorder_product_wraper`),
-  INDEX `fk_order_product_wraper_product1_idx` (`product_idproduct` ASC) VISIBLE,
-  INDEX `fk_order_product_wraper_order1_idx` (`order_idorder` ASC) VISIBLE,
-  CONSTRAINT `fk_order_product_wraper_product1`
+  `products_order_idproducts_order` INT NOT NULL,
+  PRIMARY KEY (`idproducts_order_product_wraper`),
+  INDEX `fk_products_order_product_wraper_product1_idx` (`product_idproduct` ASC) VISIBLE,
+  INDEX `fk_products_order_product_wraper_products_order1_idx` (`products_order_idproducts_order` ASC) VISIBLE,
+  CONSTRAINT `fk_products_order_product_wraper_product1`
     FOREIGN KEY (`product_idproduct`)
     REFERENCES `mydb`.`product` (`idproduct`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_order_product_wraper_order1`
-    FOREIGN KEY (`order_idorder`)
-    REFERENCES `mydb`.`order` (`idorder`)
+  CONSTRAINT `fk_products_order_product_wraper_products_order1`
+    FOREIGN KEY (`products_order_idproducts_order`)
+    REFERENCES `mydb`.`products_order` (`idproducts_order`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

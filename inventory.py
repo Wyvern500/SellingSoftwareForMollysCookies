@@ -135,13 +135,11 @@ class ProductItemWidget(QWidget):
         self.quantity_label = QLabel(f"Cantidad: {self.ingredient.amount}")
         self.price_label = QLabel(f"Precio: ${self.ingredient.price}")
         self.unity_type = QLabel(f"Tipo de producto: {self.ingredient.product_type}")
-        #self.total_label = QLabel(f"Total: ${price * quantity:.2f}")
 
         details_layout.addWidget(self.name_label)
         details_layout.addWidget(self.quantity_label)
         details_layout.addWidget(self.price_label)
         details_layout.addWidget(self.unity_type)
-        #details_layout.addWidget(self.total_label)
 
         layout.addLayout(details_layout)
         layout.setStretch(1, 4)  # Detalles toman más espacio

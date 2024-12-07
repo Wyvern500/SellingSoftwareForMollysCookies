@@ -11,14 +11,6 @@ class DataBaseManager:
         self.InitDataBase()
         # self.insert_data("ingredient", {"name": "Dildo", "amount":5, "price":10.50,
         #                                "description":"Sientate,relajate, disfruta...","product_type":"Unidad", "image_path": ""} )
-        """
-            name TEXT NOT NULL,
-          amount INTEGER NOT NULL,
-          price REAL NOT NULL,
-          description TEXT,
-          product_type TEXT NOT NULL,
-          image_path TEXT NOT NULL
-        """
         print(self.get_all_data_from_table("ingredient"))
 
     def InitDataBase(self):
@@ -39,6 +31,7 @@ class DataBaseManager:
         conn.close()
 
     def get_all_data_from_table (self, table_name):
+        table_name = self.process_table_name(table_name)
 
         with sqlite3.connect(sqlite_db_path) as conn:
             cursor = conn.cursor()
@@ -48,6 +41,47 @@ class DataBaseManager:
 
         return rows  # La conexión se cierra automáticamente aquí
 
+    def get_id_for_table_by_field(self, table: str, field: str, target_value, id_prefix: str = "id"):
+        table = self.process_table_name(table)
+
+        with sqlite3.connect(sqlite_db_path) as conn:
+            cursor = conn.cursor()
+            to_delete = "'"
+            if type(target_value) is str:
+                query = f"SELECT {id_prefix}{table.replace(to_delete, '')} FROM {table} WHERE {field} = '{target_value}';"
+            else:
+                query = f"SELECT {id_prefix}{table.replace(to_delete, '')} FROM {table} WHERE {field} = {target_value};"
+            cursor.execute(query)
+            rows = cursor.fetchall()
+
+        return rows
+
+    def get_record_by_field(self, table_name: str, field: str, target_value):
+        table_name = self.process_table_name(table_name)
+
+        with sqlite3.connect(sqlite_db_path) as conn:
+            cursor = conn.cursor()
+            if type(target_value) is str:
+                query = f"SELECT * FROM {table_name} WHERE {field} = '{target_value}';"
+            else:
+                query = f"SELECT * FROM {table_name} WHERE {field} = {target_value};"
+            cursor.execute(query)
+            rows = cursor.fetchall()
+
+        return rows
+
+    def remove_record_from_table_by_field(self, table: str, field: str, target_value):
+        table = self.process_table_name(table)
+
+        with sqlite3.connect(sqlite_db_path) as conn:
+            cursor = conn.cursor()
+
+            if type(target_value) is str:
+                query = f"DELETE FROM {table} WHERE {field} = '{target_value}'"
+            else:
+                query = f"DELETE FROM {table} WHERE {field} = {target_value}"
+            cursor.execute(query)
+
     def create_connection(self):
         # Conectar o crear la base de datos
         conn = sqlite3.connect(sqlite_db_path)
@@ -55,6 +89,8 @@ class DataBaseManager:
         return conn, conn.cursor()
 
     def insert_data(self, table_name, data: dict):
+        table_name = self.process_table_name(table_name)
+
         conn, cursor = self.create_connection()
 
         # Construir las columnas y los placeholders
@@ -74,4 +110,7 @@ class DataBaseManager:
         finally:
             conn.close()  # Cerrar la conexión
 
-
+    def process_table_name(self, table_name: str):
+        if table_name == "order":
+            return "'order'"
+        return table_name
