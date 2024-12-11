@@ -65,6 +65,12 @@ class AddProductManager:
         product_description = self.parent.add_textEditDescription.toPlainText().strip()
         image_pixmap = self.parent.add_labelImagePreview.pixmap()
 
+        data = self.parent.database_manager.get_id_for_table_by_field("product",
+                                                               "name",
+                                                               product_name)
+        if len(data) != 0:
+            return
+
         # Validar que todos los campos están completos
         if not product_name or not product_price or not image_pixmap:
             print("Por favor, completa todos los campos antes de guardar.")

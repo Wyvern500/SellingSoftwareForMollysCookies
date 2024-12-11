@@ -4,6 +4,7 @@ import sqlite3
 sql_file_path = "database/database_creation_script_sqlite.sql"
 sqlite_db_path = "database/database.db"
 
+
 class DataBaseManager:
 
     def __init__(self):
@@ -30,7 +31,7 @@ class DataBaseManager:
 
         conn.close()
 
-    def get_all_data_from_table (self, table_name):
+    def get_all_data_from_table(self, table_name):
         table_name = self.process_table_name(table_name)
 
         with sqlite3.connect(sqlite_db_path) as conn:
@@ -56,7 +57,73 @@ class DataBaseManager:
 
         return rows
 
-    def get_record_by_field(self, table_name: str, field: str, target_value):
+    def get_id_for_table_by_fields(self, table: str, data: dict, id_prefix: str = "id",
+                                   id_name: str = ""):
+        table = self.process_table_name(table)
+
+        with sqlite3.connect(sqlite_db_path) as conn:
+            cursor = conn.cursor()
+            to_delete = "'"
+            to_check = []
+            for key, value in data.items():
+                if type(value) is str:
+                    to_check.append(f"{key} = '{value}'")
+                else:
+                    to_check.append(f"{key} = {value}")
+
+            conditions = " AND ".join(to_check)
+
+            id_processed = ""
+
+            if not id_name:
+                id_processed = f"{id_prefix}{table.replace(to_delete, '')}"
+            else:
+                id_processed = f"{id_prefix}{id_name}"
+
+            query = f"SELECT {id_processed} FROM {table} WHERE {conditions};"
+            try:
+                cursor.execute(query)
+            except sqlite3.Error as e:
+                print(f"Error al ejecutar el script: {e}")
+            rows = cursor.fetchall()
+
+        return rows
+
+    def get_records_by_fields(self, table_name: str, conditions: dict, order_by: str = "", ascendent = True, 
+                              literal = False):
+        table_name = self.process_table_name(table_name)
+
+        to_check = []
+        for key, value in conditions.items():
+            if not literal:
+                if type(value) is str:
+                    to_check.append(f"{key} = '{value}'")
+                else:
+                    to_check.append(f"{key} = {value}")
+            else:
+                to_check.append(f"{key}{value}")
+
+        conditions = " AND ".join(to_check)
+        
+        order_by_str = ""
+        if len(order_by) > 0:
+            order = ""
+            if ascendent:
+                order = "ASC"
+            else:
+                order = "DESC"
+            order_by_str = f" ORDER BY {order_by} {order}"
+            print(f"Order by: {order_by_str}")
+
+        with sqlite3.connect(sqlite_db_path) as conn:
+            cursor = conn.cursor()
+            query = f"SELECT * FROM {table_name} WHERE {conditions}{order_by_str};"
+            cursor.execute(query)
+            rows = cursor.fetchall()
+
+        return rows
+
+    def get_records_by_field(self, table_name: str, field: str, target_value):
         table_name = self.process_table_name(table_name)
 
         with sqlite3.connect(sqlite_db_path) as conn:
@@ -65,7 +132,11 @@ class DataBaseManager:
                 query = f"SELECT * FROM {table_name} WHERE {field} = '{target_value}';"
             else:
                 query = f"SELECT * FROM {table_name} WHERE {field} = {target_value};"
-            cursor.execute(query)
+            try:
+                cursor.execute(query)
+                print("Record obtenido exitosamente.")
+            except sqlite3.Error as e:
+                print(f"Error al ejecutar el script: {e}")
             rows = cursor.fetchall()
 
         return rows
@@ -77,10 +148,57 @@ class DataBaseManager:
             cursor = conn.cursor()
 
             if type(target_value) is str:
-                query = f"DELETE FROM {table} WHERE {field} = '{target_value}'"
+                query = f"DELETE FROM {table} WHERE {field} = '{target_value}';"
             else:
-                query = f"DELETE FROM {table} WHERE {field} = {target_value}"
-            cursor.execute(query)
+                query = f"DELETE FROM {table} WHERE {field} = {target_value};"
+            print("Query: " + query)
+            try:
+                cursor.execute(query)
+                print("Record eliminado exitosamente.")
+            except sqlite3.Error as e:
+                print(f"Error al ejecutar el script: {e}")
+
+
+    def update_record_by_id(self, table: str, data: dict, conditions: dict):
+        table = self.process_table_name(table)
+
+        to_check = []
+        for key, value in conditions.items():
+            if type(value) is str:
+                to_check.append(f"{key} = '{value}'")
+            else:
+                to_check.append(f"{key} = {value}")
+
+        conditions = " AND ".join(to_check)
+
+        to_update = []
+        for key, value in data.items():
+            if type(value) is str:
+                to_update.append(f"{key} = '{value}'")
+            else:
+                to_update.append(f"{key} = {value}")
+
+        updates = ", ".join(to_update)
+
+        with sqlite3.connect(sqlite_db_path, isolation_level="EXCLUSIVE") as conn:
+            cursor = conn.cursor()
+
+            query = f"UPDATE {table} SET {updates} WHERE {conditions};"
+            print(f"Update Query: {query}")
+            try:
+                cursor.execute(query)
+                conn.commit()
+                print("Datos actualizados exitosamente.")
+            except sqlite3.Error as e:
+                print(f"Error al ejecutar el script: {e}")
+
+            # Verifica si se actualizó alguna fila
+            if cursor.rowcount == 0:
+                print("No se actualizó ninguna fila. Verifica las condiciones del WHERE.")
+
+            rows = cursor.fetchall()
+
+        return rows
 
     def create_connection(self):
         # Conectar o crear la base de datos
