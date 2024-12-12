@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>820</width>
-    <height>589</height>
+    <height>587</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -51,7 +51,7 @@ QTabBar::tab:hover {
 }</string>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="crearordenTab">
        <attribute name="title">
@@ -62,7 +62,7 @@ QTabBar::tab:hover {
          <rect>
           <x>420</x>
           <y>390</y>
-          <width>361</width>
+          <width>151</width>
           <height>31</height>
          </rect>
         </property>
@@ -122,7 +122,7 @@ QPushButton:hover {
          <string notr="true">QLabel{	
 	color: black;
 	font-family: Arial;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: bold;
 	background-color: orange;
 	border-radius: 10px;
@@ -135,93 +135,13 @@ QPushButton:hover {
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QTextEdit" name="searchbar">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>10</y>
-          <width>401</width>
-          <height>41</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QTextEdit{
-	background-color: white;
-	font-family: Arial;
-	font-size: 18px;
-}</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="product_label">
-        <property name="geometry">
-         <rect>
-          <x>430</x>
-          <y>20</y>
-          <width>81</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel{	
-	color: black;
-	font-family: Arial;
-	font-size: 18px;
-	font-weight: bold;
-}</string>
-        </property>
-        <property name="text">
-         <string>Producto</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="quantity_label">
-        <property name="geometry">
-         <rect>
-          <x>560</x>
-          <y>20</y>
-          <width>81</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel{	
-	color: black;
-	font-family: Arial;
-	font-size: 18px;
-	font-weight: bold;
-}</string>
-        </property>
-        <property name="text">
-         <string>Cantidad</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="total_label">
-        <property name="geometry">
-         <rect>
-          <x>700</x>
-          <y>20</y>
-          <width>71</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel{	
-	color: black;
-	font-family: Arial;
-	font-size: 18px;
-	font-weight: bold;
-}</string>
-        </property>
-        <property name="text">
-         <string>Subtotal</string>
-        </property>
-       </widget>
        <widget class="QWidget" name="horizontalLayoutWidget_3">
         <property name="geometry">
          <rect>
           <x>0</x>
           <y>60</y>
           <width>401</width>
-          <height>311</height>
+          <height>271</height>
          </rect>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -257,19 +177,6 @@ QListView {
           </widget>
          </item>
         </layout>
-       </widget>
-       <widget class="QTableWidget" name="crear_orden_orderList_tableWidget">
-        <property name="geometry">
-         <rect>
-          <x>420</x>
-          <y>60</y>
-          <width>361</width>
-          <height>251</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
-        </property>
        </widget>
        <widget class="QGroupBox" name="groupBox">
         <property name="geometry">
@@ -343,6 +250,190 @@ QGroupBox:title {
           </widget>
          </item>
         </layout>
+       </widget>
+       <widget class="QPushButton" name="crear_order_delete_product_button">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>340</y>
+          <width>401</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>12</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	font-family: Arial;
+	font-size: 12;
+	font-weight: bold;
+	background-color: orange;
+	color: black;
+	width: 50px;
+    height: 50px;
+    
+    border-radius: 10px;
+	transition: background-color 0.5s, transform 0.5s;
+}
+
+QPushButton:hover {
+	background-color: white;
+	color: black;
+}
+
+
+
+</string>
+        </property>
+        <property name="text">
+         <string>Eliminar producto</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="horizontalLayoutWidget_4">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>60</y>
+          <width>361</width>
+          <height>251</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QListWidget" name="crear_orden_orderList_listWidget">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 255, 255);</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QPushButton" name="crear_orden_delete_order_entry">
+        <property name="geometry">
+         <rect>
+          <x>580</x>
+          <y>390</y>
+          <width>201</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+	background-color: orange;
+	color: black;
+	width: 50px;
+    height: 50px;
+    
+    border-radius: 10px;
+	transition: background-color 0.5s, transform 0.5s;
+}
+
+QPushButton:hover {
+	background-color: white;
+	color: black;
+}
+
+
+
+</string>
+        </property>
+        <property name="text">
+         <string>Eliminar entrada de orden</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_8">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>20</y>
+          <width>91</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>-1</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{	
+	color: black;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+}</string>
+        </property>
+        <property name="text">
+         <string>Producto:</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="crear_order_search_product_lineEdit">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>10</y>
+          <width>311</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit{
+	background-color: white;
+}</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_11">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>20</y>
+          <width>91</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>-1</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{	
+	color: black;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+}</string>
+        </property>
+        <property name="text">
+         <string>Producto:</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="crear_orden_search_order_entry_lineEdit">
+        <property name="geometry">
+         <rect>
+          <x>510</x>
+          <y>10</y>
+          <width>271</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit{
+	background-color: white;
+}</string>
+        </property>
        </widget>
       </widget>
       <widget class="QWidget" name="ordenesTab">
@@ -445,69 +536,6 @@ QPushButton:hover {
              <number>300</number>
             </property>
            </widget>
-           <widget class="QLabel" name="label">
-            <property name="geometry">
-             <rect>
-              <x>430</x>
-              <y>50</y>
-              <width>91</width>
-              <height>21</height>
-             </rect>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QLabel{	
-	color: black;
-	font-family: Arial;
-	font-size: 18px;
-	font-weight: bold;
-}</string>
-            </property>
-            <property name="text">
-             <string>Producto</string>
-            </property>
-           </widget>
-           <widget class="QLabel" name="label_2">
-            <property name="geometry">
-             <rect>
-              <x>570</x>
-              <y>50</y>
-              <width>91</width>
-              <height>21</height>
-             </rect>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QLabel{	
-	color: black;
-	font-family: Arial;
-	font-size: 18px;
-	font-weight: bold;
-}</string>
-            </property>
-            <property name="text">
-             <string>Cantidad</string>
-            </property>
-           </widget>
-           <widget class="QLabel" name="label_3">
-            <property name="geometry">
-             <rect>
-              <x>730</x>
-              <y>50</y>
-              <width>51</width>
-              <height>21</height>
-             </rect>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QLabel{	
-	color: black;
-	font-family: Arial;
-	font-size: 18px;
-	font-weight: bold;
-}</string>
-            </property>
-            <property name="text">
-             <string>Total</string>
-            </property>
-           </widget>
            <widget class="QLabel" name="order_total_label">
             <property name="geometry">
              <rect>
@@ -521,10 +549,11 @@ QPushButton:hover {
              <string notr="true">QLabel{	
 	color: black;
 	font-family: Arial;
-	font-size: 18px;
+	font-size: 14px;
 	font-weight: bold;
 	background-color: orange;
-	border-radius: 10px;
+	border: 2px solid black;
+    border-radius: 10px;
 }</string>
             </property>
             <property name="text">
@@ -543,13 +572,20 @@ QPushButton:hover {
               <height>51</height>
              </rect>
             </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>-1</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
             <property name="styleSheet">
              <string notr="true">QLabel{	
 	color: black;
 	font-family: Arial;
-	font-size: 18px;
+	font-size: 12px;
 	font-weight: bold;
-	background-color: orange;
+	background-color: white;
 	border-radius: 10px;
 }</string>
             </property>
@@ -560,30 +596,13 @@ QPushButton:hover {
              <set>Qt::AlignCenter</set>
             </property>
            </widget>
-           <widget class="QTextEdit" name="order_serach_order_textEdit">
-            <property name="geometry">
-             <rect>
-              <x>0</x>
-              <y>0</y>
-              <width>401</width>
-              <height>41</height>
-             </rect>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QTextEdit{
-	background-color: white;
-	font-family: Arial;
-	font-size: 18px;
-}</string>
-            </property>
-           </widget>
            <widget class="QListWidget" name="order_order_entries_listWidget">
             <property name="geometry">
              <rect>
               <x>430</x>
-              <y>80</y>
+              <y>60</y>
               <width>351</width>
-              <height>241</height>
+              <height>261</height>
              </rect>
             </property>
             <property name="styleSheet">
@@ -645,6 +664,92 @@ QPushButton:hover {
              <number>300</number>
             </property>
            </widget>
+           <widget class="QLineEdit" name="order_search_order_lineEdit">
+            <property name="geometry">
+             <rect>
+              <x>80</x>
+              <y>10</y>
+              <width>321</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLineEdit{
+	background-color: white;
+}</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_7">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>20</y>
+              <width>61</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>-1</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{	
+	color: black;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+}</string>
+            </property>
+            <property name="text">
+             <string>Orden:</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_9">
+            <property name="geometry">
+             <rect>
+              <x>430</x>
+              <y>20</y>
+              <width>91</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>-1</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel{	
+	color: black;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+}</string>
+            </property>
+            <property name="text">
+             <string>Producto:</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="order_search_order_entry_lineEdit">
+            <property name="geometry">
+             <rect>
+              <x>520</x>
+              <y>10</y>
+              <width>261</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLineEdit{
+	background-color: white;
+}</string>
+            </property>
+           </widget>
           </widget>
          </item>
         </layout>
@@ -659,8 +764,8 @@ QPushButton:hover {
          <rect>
           <x>0</x>
           <y>20</y>
-          <width>801</width>
-          <height>271</height>
+          <width>611</width>
+          <height>201</height>
          </rect>
         </property>
         <property name="autoFillBackground">
@@ -713,7 +818,7 @@ QCalendarWidget QAbstractItemView:enabled {
         <property name="geometry">
          <rect>
           <x>630</x>
-          <y>430</y>
+          <y>420</y>
           <width>161</width>
           <height>54</height>
          </rect>
@@ -746,32 +851,13 @@ QPushButton:hover {
          <string>Seleccionar</string>
         </property>
        </widget>
-       <widget class="QLabel" name="reportes_img">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>300</y>
-          <width>481</width>
-          <height>181</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap>../imagenes/iconoGaleria.jpeg</pixmap>
-        </property>
-        <property name="scaledContents">
-         <bool>true</bool>
-        </property>
-       </widget>
        <widget class="QComboBox" name="reportes_combobox">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>300</y>
-          <width>131</width>
-          <height>181</height>
+          <x>630</x>
+          <y>390</y>
+          <width>161</width>
+          <height>21</height>
          </rect>
         </property>
         <item>
@@ -779,6 +865,35 @@ QPushButton:hover {
           <string>ventas</string>
          </property>
         </item>
+       </widget>
+       <widget class="QWidget" name="horizontalLayoutWidget_5">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>230</y>
+          <width>611</width>
+          <height>241</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="reportes_graphic_container">
+         <item>
+          <widget class="QScrollArea" name="reportes_scrollArea">
+           <property name="widgetResizable">
+            <bool>true</bool>
+           </property>
+           <widget class="QWidget" name="scrollAreaWidgetContents">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>607</width>
+              <height>237</height>
+             </rect>
+            </property>
+           </widget>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </widget>
       <widget class="QWidget" name="inventarioTab">
@@ -1070,36 +1185,25 @@ QGroupBox * {
               </property>
              </widget>
             </item>
+            <item row="6" column="1">
+             <widget class="QPushButton" name="inv_guardar_cambios_button">
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	background-color: pink;
+}</string>
+              </property>
+              <property name="text">
+               <string>Guardar cambios</string>
+              </property>
+             </widget>
+            </item>
            </layout>
           </item>
          </layout>
         </widget>
-       </widget>
-       <widget class="QLabel" name="inv_seleccionado_label">
-        <property name="geometry">
-         <rect>
-          <x>450</x>
-          <y>20</y>
-          <width>331</width>
-          <height>51</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel{	
-	color: black;
-	font-family: Arial;
-	font-size: 18px;
-	font-weight: bold;
-	background-color: orange;
-	border-radius: 10px;
-}</string>
-        </property>
-        <property name="text">
-         <string>Seleccionado</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
        </widget>
        <widget class="QLineEdit" name="inv_busqueda_line_edit">
         <property name="geometry">

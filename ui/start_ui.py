@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'ui/start.ui'
+# Form implementation generated from reading ui file 'd:\Coding\Python\SellingSoftwareForMolliesCookies\LastTime\SellingSoftwareForMollysCookies\ui\start.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.2
 #
@@ -659,7 +659,7 @@ class Ui_MainWindow(object):
         self.inv_imagen_ingrediente = QtWidgets.QLabel(parent=self.verticalLayoutWidget_2)
         self.inv_imagen_ingrediente.setMaximumSize(QtCore.QSize(64, 64))
         self.inv_imagen_ingrediente.setText("")
-        self.inv_imagen_ingrediente.setPixmap(QtGui.QPixmap("ui\\../../../imagenes/galleta2.jpg"))
+        self.inv_imagen_ingrediente.setPixmap(QtGui.QPixmap("d:\\Coding\\Python\\SellingSoftwareForMolliesCookies\\LastTime\\SellingSoftwareForMollysCookies\\ui\\../../../imagenes/galleta2.jpg"))
         self.inv_imagen_ingrediente.setScaledContents(True)
         self.inv_imagen_ingrediente.setObjectName("inv_imagen_ingrediente")
         self.formLayout.setWidget(5, QtWidgets.QFormLayout.ItemRole.FieldRole, self.inv_imagen_ingrediente)
@@ -700,7 +700,7 @@ class Ui_MainWindow(object):
         self.add_labelDropImage.setGeometry(QtCore.QRect(60, 20, 141, 131))
         self.add_labelDropImage.setAcceptDrops(True)
         self.add_labelDropImage.setText("")
-        self.add_labelDropImage.setPixmap(QtGui.QPixmap("ui\\../imagenes/iconoGaleria.jpeg"))
+        self.add_labelDropImage.setPixmap(QtGui.QPixmap("d:\\Coding\\Python\\SellingSoftwareForMolliesCookies\\LastTime\\SellingSoftwareForMollysCookies\\ui\\../imagenes/iconoGaleria.jpeg"))
         self.add_labelDropImage.setScaledContents(True)
         self.add_labelDropImage.setObjectName("add_labelDropImage")
         self.add_searchImageButton = QtWidgets.QPushButton(parent=self.groupBox_2)
