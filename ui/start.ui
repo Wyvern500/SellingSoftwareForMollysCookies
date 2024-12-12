@@ -875,7 +875,25 @@ QPushButton:hover {
           <height>241</height>
          </rect>
         </property>
-        <layout class="QHBoxLayout" name="reportes_graphic_container"/>
+        <layout class="QHBoxLayout" name="reportes_graphic_container">
+         <item>
+          <widget class="QScrollArea" name="reportes_scrollArea">
+           <property name="widgetResizable">
+            <bool>true</bool>
+           </property>
+           <widget class="QWidget" name="scrollAreaWidgetContents">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>607</width>
+              <height>237</height>
+             </rect>
+            </property>
+           </widget>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </widget>
       <widget class="QWidget" name="inventarioTab">
