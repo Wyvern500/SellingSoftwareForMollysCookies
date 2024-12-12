@@ -18,6 +18,7 @@ class AddProductManager:
         self.parent.add_labelDropImage.setAcceptDrops(True)
         self.parent.add_labelDropImage.dragEnterEvent = self.drag_enter_event
         self.parent.add_labelDropImage.dropEvent = self.drop_event
+        
 
         # Conectar el botón "Guardar Cambios"
         self.parent.add_saveChangesButton.clicked.connect(self.save_changes)
@@ -59,6 +60,10 @@ class AddProductManager:
             self.parent.current_image_path = file_path
 
     def save_changes(self):
+        product_name = self.parent.add_lineEditProductName.text().strip()
+        
+        data = self.parent.database_manager.get_records_by_field("product", "name", product_name)
+        
         # Leer los datos de los widgets
         product_name = self.parent.add_lineEditProductName.text().strip()
         product_price = self.parent.add_lineEditPrice.text().strip()
