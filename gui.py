@@ -798,7 +798,7 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuInventario.menuAction())
 
         self.retranslateUi(MainWindow)
-        self.tabs.setCurrentIndex(2)
+        self.tabs.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -817,7 +817,7 @@ class Ui_MainWindow(object):
         self.order_delete_order_button.setText(_translate("MainWindow", "Eliminar orden"))
         self.order_total_label.setText(_translate("MainWindow", "Total a pagar"))
         self.order_description_label.setText(_translate("MainWindow", "Caracteristicas"))
-        self.order_delete_order_entry_button.setText(_translate("MainWindow", "Eliminar item"))
+        self.order_delete_order_entry_button.setText(_translate("MainWindow", "Eliminar producto"))
         self.label_7.setText(_translate("MainWindow", "Orden:"))
         self.label_9.setText(_translate("MainWindow", "Producto:"))
         self.tabs.setTabText(self.tabs.indexOf(self.ordenesTab), _translate("MainWindow", "Ordenes"))

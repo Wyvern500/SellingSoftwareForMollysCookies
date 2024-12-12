@@ -51,7 +51,7 @@ QTabBar::tab:hover {
 }</string>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="crearordenTab">
        <attribute name="title">
@@ -658,7 +658,7 @@ QPushButton:hover {
 </string>
             </property>
             <property name="text">
-             <string>Eliminar item</string>
+             <string>Eliminar producto</string>
             </property>
             <property name="autoRepeatDelay">
              <number>300</number>
