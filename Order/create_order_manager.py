@@ -233,6 +233,11 @@ class CreateOrderManager(AbstractTabManager):
 
             # Agregar el widget personalizado al QListWidget
             self.parent.crear_items_listWidget.setItemWidget(item, custom_widget)
+    
+    def tab_changed(self, index: int):
+        if self.parent.tabs.indexOf(self.parent.crearordenTab) == index:
+            self.parent.crear_items_listWidget.clear()
+            self.load_items_from_database()
 
 
 # Clase personalizada para mostrar imagen y nombre en la tabla

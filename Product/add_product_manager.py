@@ -3,8 +3,10 @@ from PyQt6.QtWidgets import QListWidgetItem, QFileDialog, QWidget, QLabel, QHBox
 
 from PyQt6.QtGui import QPixmap, QDragEnterEvent, QDropEvent
 
+from simple_manager import AbstractTabManager
 
-class AddProductManager:
+
+class AddProductManager(AbstractTabManager):
 
     def __init__(self, parent):
         from window import Window
@@ -64,44 +66,52 @@ class AddProductManager:
         
         data = self.parent.database_manager.get_records_by_field("product", "name", product_name)
         
-        # Leer los datos de los widgets
-        product_name = self.parent.add_lineEditProductName.text().strip()
-        product_price = self.parent.add_lineEditPrice.text().strip()
-        product_description = self.parent.add_textEditDescription.toPlainText().strip()
-        image_pixmap = self.parent.add_labelImagePreview.pixmap()
+        if len(data) == 0:
+            
+            # Leer los datos de los widgets
+            product_price = self.parent.add_lineEditPrice.text().strip()
+            product_description = self.parent.add_textEditDescription.toPlainText().strip()
+            image_pixmap = self.parent.add_labelImagePreview.pixmap()
 
-        data = self.parent.database_manager.get_id_for_table_by_field("product",
-                                                               "name",
-                                                               product_name)
-        if len(data) != 0:
-            return
+            # Validar que todos los campos están completos
+            if not product_name or not product_price or not image_pixmap:
+                print("Por favor, completa todos los campos antes de guardar.")
+                return
 
-        # Validar que todos los campos están completos
-        if not product_name or not product_price or not image_pixmap:
-            print("Por favor, completa todos los campos antes de guardar.")
-            return
+            # Crear un nuevo QListWidgetItem
+            item = QListWidgetItem(self.parent.crear_items_listWidget)
 
-        # Crear un nuevo QListWidgetItem
-        item = QListWidgetItem(self.parent.crear_items_listWidget)
+            # Crear un widget personalizado para el producto
+            product = Product(product_name, float(product_price), product_description,
+                            self.image_path)
+            custom_widget = ProductItemWidget(product)
+            item.setSizeHint(custom_widget.sizeHint())
 
-        # Crear un widget personalizado para el producto
-        product = Product(product_name, float(product_price), product_description,
-                          self.image_path)
-        custom_widget = ProductItemWidget(product)
-        item.setSizeHint(custom_widget.sizeHint())
+            # Agregar el widget personalizado al QListWidget
+            self.parent.crear_items_listWidget.setItemWidget(item, custom_widget)
 
-        # Agregar el widget personalizado al QListWidget
-        self.parent.crear_items_listWidget.setItemWidget(item, custom_widget)
+            # Agregar el producto a la base de datos
+            self.parent.database_manager.insert_data("product", product.serialize())
 
-        # Agregar el producto a la base de datos
-        self.parent.database_manager.insert_data("product", product.serialize())
-
-        # Resetear los campos
-        self.parent.add_lineEditProductName.clear()
-        self.parent.add_lineEditPrice.clear()
-        self.parent.add_textEditDescription.clear()
-        self.parent.add_labelImagePreview.clear()
-        print("Producto guardado y agregado a la lista.")
+            # Resetear los campos
+            self.parent.add_lineEditProductName.clear()
+            self.parent.add_lineEditPrice.clear()
+            self.parent.add_textEditDescription.clear()
+            self.parent.add_labelImagePreview.clear()
+            print("Producto guardado y agregado a la lista.")
+        else:
+            # Leer los datos de los widgets
+            product_price = self.parent.add_lineEditPrice.text().strip()
+            product_description = self.parent.add_textEditDescription.toPlainText().strip()
+            image_pixmap = self.parent.add_labelImagePreview.pixmap()
+            
+            # Validar que todos los campos están completos
+            if not product_name or not product_price or not image_pixmap:
+                print("Por favor, completa todos los campos antes de guardar.")
+                return
+            
+            self.parent.database_manager.update_record_by_id("product", {"name": product_name, "price": float(product_price), "description": product_description, "image_path": self.image_path}, 
+                                                             {"idproduct": data[0][0]})
 
 
 def deserialize(data):
