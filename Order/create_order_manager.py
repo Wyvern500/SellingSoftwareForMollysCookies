@@ -40,6 +40,7 @@ class CreateOrderManager(AbstractTabManager):
         order_name = self.parent.crear_orden_nombre_orden_lineEdit.text()
 
         if not order_name:
+            error_utils.show_error_message("Porfavor dale nombre a la orden")
             return
 
         order_data = self.parent.database_manager.get_records_by_field("order",
@@ -194,6 +195,9 @@ class CreateOrderManager(AbstractTabManager):
         if data["name"] == "editing_finished":
             order_entry: OrderEntryItemWidget = data["sender"]
             
+            if not order_entry.quantity_line_edit.text() or not order_entry.quantity_line_edit.text().isdigit():
+                return
+
             new_amount = int(order_entry.quantity_line_edit.text())
             order_entry.setAmount(new_amount)
     
@@ -219,6 +223,13 @@ class CreateOrderManager(AbstractTabManager):
         self.parent.crear_description_textEdit.setText(custom_widget.product.description)
 
     def load_items_from_database(self):
+        added_products: dict[str, OrderEntryItemWidget] = {}
+
+        for i in range(self.parent.crear_orden_orderList_listWidget.count()):
+            list_item = self.parent.crear_orden_orderList_listWidget.item(i)
+            order_entry: OrderEntryItemWidget = self.parent.crear_orden_orderList_listWidget.itemWidget(list_item)
+            added_products[order_entry.product.name] = order_entry
+
         alldata = self.parent.database_manager.get_all_data_from_table("product")
 
         for entry in alldata:
@@ -231,8 +242,19 @@ class CreateOrderManager(AbstractTabManager):
             custom_widget = Product.ProductItemWidget(product)
             item.setSizeHint(custom_widget.sizeHint())
 
+            if product.name in added_products:
+                added_products[product.name].name_label.setText(f"Producto: {product.name}")
+                added_products[product.name].name_label.setText(f"Precio: ${product.price}")
+                added_products[product.name].setToolTip(product.description)
+                added_products[product.name].image_label.setPixmap(QPixmap(product.image_path).scaled(64, 64))
+                added_products[product.name].total_label.setText(f"Subtotal: ${product.price * int(added_products[product.name].quantity_line_edit.text())}")
+                added_products[product.name].product = product
+                added_products[product.name].order_entry.product = product
+
             # Agregar el widget personalizado al QListWidget
             self.parent.crear_items_listWidget.setItemWidget(item, custom_widget)
+        
+        self.set_total()
     
     def tab_changed(self, index: int):
         if self.parent.tabs.indexOf(self.parent.crearordenTab) == index:
