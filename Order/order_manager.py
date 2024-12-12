@@ -66,7 +66,7 @@ class OrderManager(AbstractTabManager):
     def set_total(self):
         total = 0
 
-        order_id = self.get_order_id(self.current_order.order.name)
+        order_id = self.get_order_id(self.current_order.order.name)[0][0]
         data = self.parent.database_manager.get_records_by_field("order_entry_wraper",
                                                                  "order_idorder",
                                                                  order_id)
@@ -81,7 +81,9 @@ class OrderManager(AbstractTabManager):
         for selected_order in selected_orders:
             order_item: OrderListItem = (self.parent.order_orders_listWidget
                                          .itemWidget(selected_order))
-            order_id = self.get_order_id(order_item.order.name)
+            order_id = self.get_order_id(order_item.order.name)[0][0]
+
+            self.parent.database_manager.remove_record_from_table_by_field("order_entry_wraper", "order_idorder", order_id)
 
             # Eliminando la orden de la base de datos
             self.parent.database_manager.remove_record_from_table_by_field("order",
@@ -92,15 +94,26 @@ class OrderManager(AbstractTabManager):
             self.parent.order_orders_listWidget.takeItem(self.parent
                                                          .order_orders_listWidget
                                                          .row(selected_order))
+        
+        self.parent.order_order_entries_listWidget.clear()
 
     def on_delete_order_entry(self):
         selected_order_entries = self.parent.order_order_entries_listWidget.selectedItems()
+
+        if not self.current_order:
+            return
+
+        order_id = self.get_order_id(self.current_order.order.name)
+        
+        if len(order_id) == 0:
+            return
+        order_id = order_id[0][0]
 
         for selected_order_entry in selected_order_entries:
             order_entry: OrderEntryItemWidget = (self.parent.order_order_entries_listWidget
                                                  .itemWidget(selected_order_entry))
 
-            order_id = self.get_order_id(self.current_order.order.name)
+            
             product_id = self.parent.database_manager.get_id_for_table_by_field("product",
                                                                                 "name",
                                                                                 order_entry.product.name)[0][0]
@@ -126,7 +139,7 @@ class OrderManager(AbstractTabManager):
             self.add_order_to_list(Order(entry[1], entry[2], entry[3]))
 
     def load_order_entries_from_database(self, order: OrderListItem):
-        order_id = self.get_order_id(order.order.name)
+        order_id = self.get_order_id(order.order.name)[0][0]
         data = self.parent.database_manager.get_records_by_field("order_entry_wraper",
                                                                  "order_idorder",
                                                                  order_id)
@@ -142,7 +155,7 @@ class OrderManager(AbstractTabManager):
     def get_order_id(self, order_name: str):
         return self.parent.database_manager.get_id_for_table_by_field("order",
                                                                       "name",
-                                                                      order_name)[0][0]
+                                                                      order_name)
 
     def add_order_to_list(self, order: Order):
         # Crear el widget personalizado
@@ -174,13 +187,18 @@ class OrderManager(AbstractTabManager):
     def tab_changed(self, index: int):
         if self.parent.tabs.indexOf(self.parent.ordenesTab) == index:
             self.parent.order_orders_listWidget.clear()
+            self.parent.order_order_entries_listWidget.clear()
             self.load_orders_from_database()
 
     def on_amount_changed(self, data):
         if data["name"] == "editing_finished":
-            order_id = self.get_order_id(self.current_order.order.name)
+
+            order_id = self.get_order_id(self.current_order.order.name)[0][0]
 
             order_entry: OrderEntryItemWidget = data["sender"]
+
+            if not order_entry.quantity_line_edit.text() or not order_entry.quantity_line_edit.text().isdigit():
+                return
 
             product_id = self.parent.database_manager.get_records_by_field("product",
                                                                            "name",

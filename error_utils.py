@@ -8,3 +8,10 @@ def show_error_message(message: str):
     msg_box.setWindowTitle("Error")        # Título del cuadro de diálogo
     msg_box.setText(message)               # Mensaje a mostrar
     msg_box.exec()
+
+def isfloat(num):
+    try:
+        float(num)
+        return True
+    except ValueError:
+        return False

@@ -4,6 +4,7 @@ from PyQt6.QtWidgets import QListWidgetItem, QFileDialog, QWidget, QLabel, QHBox
 from PyQt6.QtGui import QPixmap, QDragEnterEvent, QDropEvent
 
 from simple_manager import AbstractTabManager
+import error_utils
 
 
 class AddProductManager(AbstractTabManager):
@@ -74,7 +75,7 @@ class AddProductManager(AbstractTabManager):
             image_pixmap = self.parent.add_labelImagePreview.pixmap()
 
             # Validar que todos los campos están completos
-            if not product_name or not product_price or not image_pixmap:
+            if not product_name or not product_price or not image_pixmap or not error_utils.isfloat(product_price):
                 print("Por favor, completa todos los campos antes de guardar.")
                 return
 
